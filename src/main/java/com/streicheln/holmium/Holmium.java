@@ -49,7 +49,15 @@ public class Holmium {
     // Creates a new BlockItem with the id "holmium:example_block", combining the namespace and path
     public static final DeferredItem<BlockItem> EXAMPLE_BLOCK_ITEM = ITEMS.registerSimpleBlockItem("example_block", EXAMPLE_BLOCK);
 
+    // Cobbled Holmium block
     public static final DeferredBlock<Block> COBBLED_HOLMIUM = BLOCKS.registerSimpleBlock("cobbled_holmium", BlockBehaviour.Properties.of().mapColor(MapColor.STONE));
+    // Item version of this block
+    public static final DeferredItem<BlockItem> COBBLED_HOLMIUM_ITEM = ITEMS.registerSimpleBlockItem("cobbled_holmium", COBBLED_HOLMIUM);
+
+    // Holmium Stone block
+    public static final DeferredBlock<Block> HOLMIUM_STONE = BLOCKS.registerSimpleBlock("holmium_stone", BlockBehaviour.Properties.of().mapColor(MapColor.STONE));
+    // Item version of this block
+    public static final DeferredItem<BlockItem> HOLMIUM_STONE_ITEM = ITEMS.registerSimpleBlockItem("holmium_stone", HOLMIUM_STONE);
 
 
     // Creates a new food item with the id "holmium:example_id", nutrition 1 and saturation 2
@@ -63,6 +71,8 @@ public class Holmium {
             .icon(() -> EXAMPLE_ITEM.get().getDefaultInstance())
             .displayItems((parameters, output) -> {
                 output.accept(EXAMPLE_ITEM.get()); // Add the example item to the tab. For your own tabs, this method is preferred over the event
+                output.accept(COBBLED_HOLMIUM_ITEM.get());
+                output.accept(HOLMIUM_STONE_ITEM.get());
             }).build());
 
     // The constructor for the mod class is the first code that is run when your mod is loaded.
