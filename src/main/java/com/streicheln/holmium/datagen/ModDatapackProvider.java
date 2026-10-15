@@ -20,6 +20,6 @@ public class ModDatapackProvider {
             .add(NeoForgeRegistries.Keys.BIOME_MODIFIERS, ModBiomeModifiers::bootstrap)
             ;
     public ModDatapackProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
-        super(output, registries, BUILDER, Set.of(Holmium.MODID));
+       // super(output, registries, BUILDER, Set.of(Holmium.MODID));
     }
 }
