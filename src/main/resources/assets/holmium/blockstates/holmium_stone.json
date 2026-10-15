@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "holmium:block/"
+      "model": "holmium:block/holmium_stone"
     }
   }
 }
