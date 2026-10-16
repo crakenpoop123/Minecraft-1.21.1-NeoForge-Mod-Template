@@ -22,7 +22,7 @@ public class ModBlocks {
 
     public static final DeferredBlock<Block> HOLMIUM_STONE = registerBlock("holmium_stone",
             () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(4f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
+                    .strength(1.5f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
 
 
 
