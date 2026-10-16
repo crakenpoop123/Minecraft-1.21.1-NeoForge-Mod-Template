@@ -1,24 +1,37 @@
 package com.streicheln.holmium.block;
 
-import net.minecraft.core.registries.Registries;
-import net.minecraft.world.item.CreativeModeTab;
+import com.streicheln.holmium.Holmium;
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
+import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
+import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
+
+import java.util.function.Supplier;
 
 
 public class ModBlocks {
+    public static final DeferredRegister.Blocks BLOCKS =
+            DeferredRegister.createBlocks(Holmium.MODID);
 
-//    // Create a Deferred Register to hold Blocks which will all be registered under the "holmium" namespace
-//    public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(olmium.MODID);
-//    // Create a Deferred Register to hold Items which will all be registered under the "holmium" namespace
-//    public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(MODID);
-//    // Create a Deferred Register to hold CreativeModeTabs which will all be registered under the "holmium" namespace
-//    public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MODID);
-//
-//    // Creates a new Block with the id "holmium:example_block", combining the namespace and path
-//    public static final DeferredBlock<Block> EXAMPLE_BLOCK = BLOCKS.registerSimpleBlock("example_block", BlockBehaviour.Properties.of().mapColor(MapColor.STONE));
+    private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
+        DeferredBlock<T> toReturn = BLOCKS.register(name, block);
+        registerBlockItem(name, toReturn);
+        return toReturn;
+    }
+
+    private static <T extends Block> void registerBlockItem(String name, DeferredBlock<T> block) {
+        ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
+    }
+
+    public static void register(IEventBus eventBus) {
+        BLOCKS.register(eventBus);
+    }
+
 
 }
+
