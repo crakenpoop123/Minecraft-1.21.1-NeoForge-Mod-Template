@@ -1,6 +1,7 @@
 package com.streicheln.holmium;
 
 import com.streicheln.holmium.block.ModBlocks;
+import com.streicheln.holmium.item.ModCreativeModeTabs;
 import com.streicheln.holmium.item.ModItems;
 import org.slf4j.Logger;
 
@@ -45,6 +46,8 @@ public class Holmium {
     public Holmium(IEventBus modEventBus, ModContainer modContainer) {
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
+
+        ModCreativeModeTabs.register(modEventBus);
 
         ModBlocks.register(modEventBus);
         ModItems.register(modEventBus);
