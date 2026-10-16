@@ -9,8 +9,8 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 public class ModItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(Holmium.MODID);
 
-    public static final DeferredItem<Item> ITEM_NAME = ITEMS.register("item name",
-            () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> ITEM_NAME = ITEMS.register("item_name",
+            () -> new Item(new Item.Properties())); // example item with no purpose
 
 
 
