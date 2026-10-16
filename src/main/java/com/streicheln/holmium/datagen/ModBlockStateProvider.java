@@ -1,6 +1,7 @@
 package com.streicheln.holmium.datagen;
 
 import com.streicheln.holmium.Holmium;
+import com.streicheln.holmium.block.ModBlocks;
 import net.minecraft.data.PackOutput;
 import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
@@ -13,7 +14,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
-        blockWithItem(Holmium.HOLMIUM_STONE);
+        //blockWithItem(ModBlocks.HOLMIUM_STONE);
        // blockWithItem(Holmium.COBBLED_HOLMIUM);
     }
 
