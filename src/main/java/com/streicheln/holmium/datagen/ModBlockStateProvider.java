@@ -1,4 +1,23 @@
 package com.streicheln.holmium.datagen;
 
-public class ModBlockStateProvider {
+import com.streicheln.holmium.Holmium;
+import net.minecraft.data.PackOutput;
+import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
+import net.neoforged.neoforge.registries.DeferredBlock;
+
+public class ModBlockStateProvider extends BlockStateProvider {
+    public ModBlockStateProvider(PackOutput output, ExistingFileHelper exFileHelper) {
+        super(output, Holmium.MODID, exFileHelper);
+    }
+
+    @Override
+    protected void registerStatesAndModels() {
+        blockWithItem(Holmium.HOLMIUM_STONE);
+       // blockWithItem(Holmium.COBBLED_HOLMIUM);
+    }
+
+    private void blockWithItem(DeferredBlock<?> deferredBlock) { // Ignore this warning
+        simpleBlockWithItem(deferredBlock.get(), cubeAll(deferredBlock.get()));
+    }
 }

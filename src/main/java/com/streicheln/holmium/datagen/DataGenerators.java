@@ -11,7 +11,7 @@ import net.neoforged.neoforge.data.event.GatherDataEvent;
 
 import java.util.concurrent.CompletableFuture;
 
-@EventBusSubscriber(modid = Holmium.MODID, bus = EventBusSubscriber.Bus.MOD)
+@EventBusSubscriber(modid = Holmium.MODID, bus = EventBusSubscriber.Bus.MOD) // Just ignore the warnings, it's fine
 public class DataGenerators {
 
     @SubscribeEvent
@@ -22,6 +22,10 @@ public class DataGenerators {
         CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
 
         //generator.addProvider(event.includeServer(), new LootTableProvider(packOutput, Collections.emptySet(), List.of(new LootTableProvider.SubProviderEntry(ModBlockLootTableProvider::new, LootContextParamSets.BLOCK)), lookupProvider));
-        generator.addProvider(event.includeServer(), new ModDatapackProvider(packOutput, lookupProvider));
+        generator.addProvider(event.includeServer(), new ModDatapackProvider(packOutput, lookupProvider)); // Datapack provider
+
+
+        generator.addProvider(event.includeClient(), new ModBlockStateProvider(packOutput, existingFileHelper)); // Block provider
+        generator.addProvider(event.includeClient(), new ModItemModelProvider(packOutput, existingFileHelper)); // Item provider
     }
 }
