@@ -4,6 +4,7 @@ import com.streicheln.holmium.Holmium;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
+import net.minecraft.data.recipes.RecipeProvider;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
@@ -25,7 +26,7 @@ public class DataGenerators {
         //generator.addProvider(event.includeServer(), new LootTableProvider(packOutput, Collections.emptySet(), List.of(new LootTableProvider.SubProviderEntry(ModBlockLootTableProvider::new, LootContextParamSets.BLOCK)), lookupProvider));
         generator.addProvider(event.includeServer(), new ModDatapackProvider(packOutput, lookupProvider)); // Datapack provider
 
-
+        generator.addProvider(event.includeServer(), new ModRecipeProvider(packOutput, lookupProvider)); // Recipe provider
         generator.addProvider(event.includeClient(), new ModBlockStateProvider(packOutput, existingFileHelper)); // Block provider
         generator.addProvider(event.includeClient(), new ModItemModelProvider(packOutput, existingFileHelper)); // Item provider
     }

@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "holmium:holmium_stone"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "holmium:item_name"
+  }
+}
