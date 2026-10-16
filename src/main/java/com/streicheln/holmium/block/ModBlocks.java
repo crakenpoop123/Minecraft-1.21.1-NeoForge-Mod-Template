@@ -22,8 +22,10 @@ public class ModBlocks {
 
     public static final DeferredBlock<Block> HOLMIUM_STONE = registerBlock("holmium_stone",
             () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(1.5f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
-
+                    .strength(1.5f, 6.0f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
+    public static final DeferredBlock<Block> COBBLED_HOLMIUM = registerBlock("cobbled_holmium",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .strength(2f, 6.0f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
 
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
@@ -42,6 +44,7 @@ public class ModBlocks {
         BLOCKS.register(eventBus);
     }
 
+    // :3 >.< TwT uwu
 
 }
 
