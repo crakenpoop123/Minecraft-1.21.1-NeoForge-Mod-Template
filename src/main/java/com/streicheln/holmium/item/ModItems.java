@@ -13,7 +13,6 @@ public class ModItems {
             () -> new Item(new Item.Properties())); // example item with no purpose
 
 
-
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }
