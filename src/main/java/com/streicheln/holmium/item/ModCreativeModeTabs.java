@@ -15,12 +15,15 @@ public class ModCreativeModeTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TAB =
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, Holmium.MODID);
 
-    public static final Supplier<CreativeModeTab> HOLMIUM_ITEMS_TAB = CREATIVE_MODE_TAB.register("holmium_items_tab",
+    public static final Supplier<CreativeModeTab> HOLMIUM_TAB = CREATIVE_MODE_TAB.register("holmium_items_tab",
 
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.HOLMIUM_STONE.get()))
-                    .title(Component.translatable("creativetab.holmium."))
+                    .title(Component.translatable("creativetab.holmium.holmium_items"))
+                    .displayItems((ItemDisplayParameters, output) -> {
+                        output.accept(ModBlocks.HOLMIUM_STONE);
+                        output.accept(ModBlocks.COBBLED_HOLMIUM);
 
-                    .build());
+                    }).build());
 
 
     public static void register(IEventBus eventBus) {

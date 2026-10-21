@@ -2,6 +2,7 @@
   "itemGroup.holmium": "Example Mod Tab",
   "block.holmium.example_block": "Example Block",
   "item.holmium.example_item": "Example Item",
+  "creativetab.holmium.holmium_items": "Holmium",
 
 
   "block.holmium.holmium_stone": "Holmium Stone",
@@ -14,4 +15,5 @@
   "holmium.configuration.logDirtBlock": "Log Dirt Block",
   "holmium.configuration.magicNumberIntroduction": "Magic Number Text",
   "holmium.configuration.magicNumber": "Magic Number"
+
 }

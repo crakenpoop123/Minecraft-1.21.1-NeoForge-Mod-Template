@@ -1,4 +1,7 @@
-// 1.21.1	2026-10-16T14:32:38.3483768	Block States: holmium
+// 1.21.1	2026-10-19T11:36:25.167197	Block States: holmium
+5d171226abda246b8c97eaeb92d882badbb48ed3 assets/holmium/blockstates/cobbled_holmium.json
 a0e0dd222bddb95f4f8b025a7c7de26b6875c1ea assets/holmium/blockstates/holmium_stone.json
+cb9f2248d434058de88e96772fe6873935313055 assets/holmium/models/block/cobbled_holmium.json
 ab31b2c4594ff0e26ed5766945bc281c3fb0e14c assets/holmium/models/block/holmium_stone.json
+3c19aac86a816c05841d33e848ba2ec0daf8ff73 assets/holmium/models/item/cobbled_holmium.json
 bc4a1d8f716ed715be5d07b5292c1b071ba5e4f2 assets/holmium/models/item/holmium_stone.json

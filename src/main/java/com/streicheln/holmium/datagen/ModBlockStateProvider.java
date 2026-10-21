@@ -15,7 +15,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
     @Override
     protected void registerStatesAndModels() {
         blockWithItem(ModBlocks.HOLMIUM_STONE);
-       // blockWithItem(Holmium.COBBLED_HOLMIUM);
+        blockWithItem(ModBlocks.COBBLED_HOLMIUM);
     }
 
     private void blockWithItem(DeferredBlock<?> deferredBlock) { // Ignore this warning

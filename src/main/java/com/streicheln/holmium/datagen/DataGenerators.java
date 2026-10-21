@@ -12,6 +12,7 @@ import net.neoforged.neoforge.data.event.GatherDataEvent;
 
 import java.util.concurrent.CompletableFuture;
 
+@SuppressWarnings("deprecation")
 @EventBusSubscriber(modid = Holmium.MODID, bus = EventBusSubscriber.Bus.MOD) // Just ignore the warnings, it's fine
 public class DataGenerators {
 
