@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "end": "holmium:block/stripped_holmium_log_top",
+    "side": "holmium:block/stripped_holmium_log"
+  }
+}

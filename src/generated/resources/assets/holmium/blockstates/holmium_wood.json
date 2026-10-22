@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "holmium:block/holmium_wood_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "holmium:block/holmium_wood"
+    },
+    "axis=z": {
+      "model": "holmium:block/holmium_wood_horizontal",
+      "x": 90
+    }
+  }
+}

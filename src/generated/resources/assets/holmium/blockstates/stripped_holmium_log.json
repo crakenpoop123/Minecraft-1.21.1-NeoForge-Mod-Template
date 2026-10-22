@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "holmium:block/stripped_holmium_log_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "holmium:block/stripped_holmium_log"
+    },
+    "axis=z": {
+      "model": "holmium:block/stripped_holmium_log_horizontal",
+      "x": 90
+    }
+  }
+}
