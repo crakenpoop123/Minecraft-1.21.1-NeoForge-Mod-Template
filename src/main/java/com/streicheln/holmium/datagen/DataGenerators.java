@@ -24,7 +24,7 @@ public class DataGenerators {
 
         //generator.addProvider(event.includeServer(), new LootTableProvider(packOutput, Collections.emptySet(), List.of(new LootTableProvider.SubProviderEntry(ModBlockLootTableProvider::new, LootContextParamSets.BLOCK)), lookupProvider));
         generator.addProvider(event.includeServer(), new ModDatapackProvider(packOutput, lookupProvider)); // Datapack provider
-
+        generator.addProvider(event.includeClient(), new ModLanguageProvider(packOutput, existingFileHelper));
         generator.addProvider(event.includeServer(), new ModRecipeProvider(packOutput, lookupProvider)); // Recipe provider
         generator.addProvider(event.includeClient(), new ModBlockStateProvider(packOutput, existingFileHelper)); // Block provider
         generator.addProvider(event.includeClient(), new ModItemModelProvider(packOutput, existingFileHelper)); // Item provider
