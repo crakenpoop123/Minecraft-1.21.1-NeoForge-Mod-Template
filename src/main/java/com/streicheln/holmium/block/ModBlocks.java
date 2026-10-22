@@ -29,11 +29,9 @@ public class ModBlocks {
             DeferredRegister.createBlocks(Holmium.MODID);
 
     public static final DeferredBlock<Block> HOLMIUM_STONE = registerBlock("holmium_stone",
-            () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(1.5f, 6.0f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)));
     public static final DeferredBlock<Block> COBBLED_HOLMIUM = registerBlock("cobbled_holmium",
-            () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(2f, 6.0f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.COBBLESTONE)));
 
     public static final DeferredBlock<Block> HOLMIUM_LOG = registerBlock("holmium_log",
             () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG)));

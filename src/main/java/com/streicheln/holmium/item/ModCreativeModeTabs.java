@@ -22,6 +22,13 @@ public class ModCreativeModeTabs {
                     .displayItems((ItemDisplayParameters, output) -> {
                         output.accept(ModBlocks.HOLMIUM_STONE);
                         output.accept(ModBlocks.COBBLED_HOLMIUM);
+                        output.accept(ModBlocks.HOLMIUM_LEAVES);
+                        output.accept(ModBlocks.HOLMIUM_LOG);
+                        output.accept(ModBlocks.HOLMIUM_PLANKS);
+                        output.accept(ModBlocks.HOLMIUM_WOOD);
+                        output.accept(ModBlocks.HOLMIUM_SAPLING);
+                        output.accept(ModBlocks.STRIPPED_HOLMIUM_LOG);
+                        output.accept(ModBlocks.STRIPPED_HOLMIUM_WOOD);
 
                     }).build());
 
