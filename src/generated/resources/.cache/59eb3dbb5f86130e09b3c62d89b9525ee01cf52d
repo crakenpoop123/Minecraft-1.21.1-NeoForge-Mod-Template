@@ -1,0 +1,10 @@
+// 1.21.1	2026-10-23T13:14:33.4223756	Loot Tables
+4f8bafa2a1c2c0e1356f09360ff2f55f183282ab data/holmium/loot_table/blocks/cobbled_holmium.json
+978d9309859ebf2e3c71e00d921e39538dd2b6ac data/holmium/loot_table/blocks/holmium_leaves.json
+09b40a7223cb2e997118fdd8a05b43fcd3d92efe data/holmium/loot_table/blocks/holmium_log.json
+884d749daa284c1fde48099e6a80c6dee3128886 data/holmium/loot_table/blocks/holmium_planks.json
+121f97ca7a963f37181ad592abf395fbec9e5c78 data/holmium/loot_table/blocks/holmium_sapling.json
+720ed588ad97d8f06021e9a7eac725d61a8700d6 data/holmium/loot_table/blocks/holmium_stone.json
+dde3b497b0a6560f9aca70cfe367506fe9da8d51 data/holmium/loot_table/blocks/holmium_wood.json
+e41cfe29b9483a503e2e5f34e3a803f7c25d4af1 data/holmium/loot_table/blocks/stripped_holmium_log.json
+d62e3a854bff1240555a2ee479cefc73be2b40b5 data/holmium/loot_table/blocks/stripped_holmium_wood.json

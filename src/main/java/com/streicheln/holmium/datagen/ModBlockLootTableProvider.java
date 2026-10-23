@@ -6,8 +6,10 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.neoforged.fml.common.Mod;
+import net.neoforged.neoforge.registries.DeferredHolder;
 
 import java.util.Set;
 
@@ -19,8 +21,6 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
 
     @Override
     protected void generate() {
-//        dropSelf(ModBlocks.HOLMIUM_STONE.get());
-        dropSelf(ModBlocks.COBBLED_HOLMIUM.get());
 
 
         // Drop cobbled
@@ -28,6 +28,12 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
                 block -> createSilkTouchDispatchTable(ModBlocks.HOLMIUM_STONE.get(),
                         applyExplosionDecay(ModBlocks.HOLMIUM_STONE.get(),
                                 LootItem.lootTableItem(ModBlocks.COBBLED_HOLMIUM.get()))));
+
+        ModBlocks.BLOCKS.getEntries().stream()
+                .map(DeferredHolder::get)
+                .filter(block -> !this.map.containsKey(block.getLootTable())) // Skip blocks predefined
+                .forEach(this::dropSelf); // Default blocks to dropSelf()
+
     }
 
     // :3
@@ -36,5 +42,4 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
     protected Iterable<Block> getKnownBlocks() {
         return ModBlocks.BLOCKS.getEntries().stream().map(Holder::value)::iterator;
     }
-
 }
