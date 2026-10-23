@@ -1,6 +1,5 @@
-package com.streicheln.holmium.block;
+package com.streicheln.holmium.material;
 
-import net.minecraft.world.level.material.Fluid;
 import net.neoforged.neoforge.fluids.FluidType;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;

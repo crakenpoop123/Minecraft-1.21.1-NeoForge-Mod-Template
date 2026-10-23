@@ -3,24 +3,23 @@ package com.streicheln.holmium.block;
 import com.streicheln.holmium.Holmium;
 import com.streicheln.holmium.block.custom.ModFlammableRotatedPillarBlock;
 import com.streicheln.holmium.item.ModItems;
+import com.streicheln.holmium.material.ModFluids;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.worldgen.features.TreeFeatures;
 import net.minecraft.util.valueproviders.UniformInt;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.grower.TreeGrower;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.*;
-import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
-import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.function.Supplier;
@@ -54,6 +53,9 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.GRASS_BLOCK)));
     public static final DeferredBlock<Block> HOLMIUM_DIRT = registerBlock("holmium_dirt",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.DIRT)));
+
+    public static final Supplier<LiquidBlock> HOLMIUM_FLUID_BLOCK = BLOCKS.register("holmium_fluid",
+            () -> new LiquidBlock(ModFluids.HOLMIUM_FLUID, BlockBehaviour.Properties.ofFullCopy(Blocks.WATER)));
 
 
 
