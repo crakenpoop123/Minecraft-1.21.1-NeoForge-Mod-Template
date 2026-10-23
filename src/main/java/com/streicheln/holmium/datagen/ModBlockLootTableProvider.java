@@ -22,7 +22,6 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
     @Override
     protected void generate() {
 
-
         // Drop cobbled
         add(ModBlocks.HOLMIUM_STONE.get(),
                 block -> createSilkTouchDispatchTable(ModBlocks.HOLMIUM_STONE.get(),

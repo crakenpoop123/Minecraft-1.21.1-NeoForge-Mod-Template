@@ -43,7 +43,9 @@ public class ModBlockStateProvider extends BlockStateProvider {
         saplingBlock(ModBlocks.HOLMIUM_RED_MUSHROOM);
         blockItem(ModBlocks.HOLMIUM_BROWN_MUSHROOM);
         blockItem(ModBlocks.HOLMIUM_RED_MUSHROOM);
-        
+
+        blockWithItem(ModBlocks.HOLMIUM_DIRT);
+        blockItem(ModBlocks.HOLMIUM_GRASS);
 
         blockWithItem(ModBlocks.URANIUM_ORE);
     }
@@ -70,4 +72,5 @@ public class ModBlockStateProvider extends BlockStateProvider {
     private void blockItem(DeferredBlock<?> deferredBlock, String appendix) {
         simpleBlockItem(deferredBlock.get(), new ModelFile.UncheckedModelFile("holmium:block/" + deferredBlock.getId().getPath() + appendix));
     }
+
 }

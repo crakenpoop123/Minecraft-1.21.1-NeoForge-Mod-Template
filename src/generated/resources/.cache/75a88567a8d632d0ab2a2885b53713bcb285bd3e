@@ -1,6 +1,7 @@
-// 1.21.1	2026-10-23T13:20:55.1621916	Block States: holmium
+// 1.21.1	2026-10-23T15:11:29.8697679	Block States: holmium
 5d171226abda246b8c97eaeb92d882badbb48ed3 assets/holmium/blockstates/cobbled_holmium.json
 82c62d2f5fffd06597abe6c2559d3d663dcf6f19 assets/holmium/blockstates/holmium_brown_mushroom.json
+c3db52d9895d05b0aa8255b0c78f45cee0b1c05f assets/holmium/blockstates/holmium_dirt.json
 b23362f605b191a556d93903622ebcaad92ecd8a assets/holmium/blockstates/holmium_leaves.json
 8353359666a443ebb1b777c49df462138cec7ec2 assets/holmium/blockstates/holmium_log.json
 3c26494a00e1128ca76b2b14be8ece4231b30086 assets/holmium/blockstates/holmium_planks.json
@@ -13,6 +14,7 @@ b1cc6177f3a1433b01bc54d97fd8a368ca72fc8f assets/holmium/blockstates/stripped_hol
 51a43eaec39795b0d3014f814dd332ecff3986d4 assets/holmium/blockstates/uranium_ore.json
 cb9f2248d434058de88e96772fe6873935313055 assets/holmium/models/block/cobbled_holmium.json
 d622cd7339fc65a9fd60f4dc440d457b70f92033 assets/holmium/models/block/holmium_brown_mushroom.json
+c56294a97495ae2d860634f1c6140f1ae028c43c assets/holmium/models/block/holmium_dirt.json
 b6e11664be020f0cab085010f5506594ff6502d7 assets/holmium/models/block/holmium_leaves.json
 68e8e739899e63fe4300154d3fade4db4a677bc2 assets/holmium/models/block/holmium_log.json
 427baea720c63b579f95a3cf45cddebbd94048e5 assets/holmium/models/block/holmium_log_horizontal.json
@@ -29,6 +31,8 @@ bf2059b1ecfef7b65067d2fdde4d2a59b3071818 assets/holmium/models/block/stripped_ho
 24ac2ba3f2f4a4daec3fe4064416b33fa7bc1cec assets/holmium/models/block/uranium_ore.json
 3c19aac86a816c05841d33e848ba2ec0daf8ff73 assets/holmium/models/item/cobbled_holmium.json
 b8dba4a9d7e16f135f982e5fdc89061dc1f34de9 assets/holmium/models/item/holmium_brown_mushroom.json
+73329a3b4efff261ae99df1a33c87faf8ffc5763 assets/holmium/models/item/holmium_dirt.json
+aa351600c98837dccbf3511aad51bba664887caa assets/holmium/models/item/holmium_grass.json
 82dbcc7039d76a2dfadacd665d0f7a6c5123c7d9 assets/holmium/models/item/holmium_leaves.json
 6b81c1f155556899a4633b5dd9fcfdba7cf0c83c assets/holmium/models/item/holmium_log.json
 2b05b86d16ed94e65a30d441bd167900d940d1fd assets/holmium/models/item/holmium_planks.json

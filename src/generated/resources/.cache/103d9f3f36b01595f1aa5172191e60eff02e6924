@@ -1,4 +1,4 @@
-// 1.21.1	2026-10-22T14:22:52.8417881	Registries
-2df91733e34e2574e579cdbcc022e914c64851cf data/holmium/neoforge/biome_modifier/add_holmium_ore.json
-161ca02bfb15781ee406a91592c5809374c7c3af data/holmium/worldgen/configured_feature/holmium.json
-6bb39b069b2ee834547e7a10ad07b2c2cae8e58c data/holmium/worldgen/placed_feature/holmium_ore_placed.json
+// 1.21.1	2026-10-23T14:19:44.334352	Registries
+3f3c0ac85bd87d1de99a0a41bf45dced7d658ade data/holmium/neoforge/biome_modifier/add_uranium_ore.json
+ea048e3bf6a5ceeca15b0a872b844af6e72c1b74 data/holmium/worldgen/configured_feature/uranium_ore.json
+546aa3da91e7bbbf862367050cd33ae5b2dc7fe6 data/holmium/worldgen/placed_feature/uranium_ore_placed.json
