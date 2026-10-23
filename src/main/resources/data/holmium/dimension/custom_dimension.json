@@ -6,7 +6,7 @@
     "biome_source": {
       "biomes": [
         {
-          "biome": "minecraft:plains",
+          "biome": "minecraft:deep_dark",
           "parameters": {
             "continentalness": [
               -0.19,

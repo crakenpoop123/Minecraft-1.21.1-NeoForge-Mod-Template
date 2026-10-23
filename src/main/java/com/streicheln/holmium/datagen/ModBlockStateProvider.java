@@ -39,6 +39,13 @@ public class ModBlockStateProvider extends BlockStateProvider {
         leavesBlock(ModBlocks.HOLMIUM_LEAVES);
         saplingBlock(ModBlocks.HOLMIUM_SAPLING);
 
+        saplingBlock(ModBlocks.HOLMIUM_BROWN_MUSHROOM);
+        saplingBlock(ModBlocks.HOLMIUM_RED_MUSHROOM);
+        blockItem(ModBlocks.HOLMIUM_BROWN_MUSHROOM);
+        blockItem(ModBlocks.HOLMIUM_RED_MUSHROOM);
+        
+
+        blockWithItem(ModBlocks.URANIUM_ORE);
     }
 
     private void saplingBlock(DeferredBlock<Block> blockRegistryObject) {
