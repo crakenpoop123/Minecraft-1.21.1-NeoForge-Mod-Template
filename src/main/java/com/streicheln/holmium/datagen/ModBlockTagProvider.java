@@ -19,16 +19,16 @@ public class ModBlockTagProvider extends BlockTagsProvider{
     @Override
     protected void addTags(HolderLookup.Provider provider) {
         tag(BlockTags.MINEABLE_WITH_PICKAXE)
-                .add(ModBlocks.HOLMIUM_STONE.get())
-                .add(ModBlocks.COBBLED_HOLMIUM.get())
-                .add(ModBlocks.URANIUM_ORE.get());
+                .add(ModBlocks.HOLMIUM_STONE.getKey())
+                .add(ModBlocks.COBBLED_HOLMIUM.getKey())
+                .add(ModBlocks.URANIUM_ORE.getKey());
 
         tag(BlockTags.MINEABLE_WITH_AXE)
-                .add(ModBlocks.HOLMIUM_LOG.get())
-                .add(ModBlocks.HOLMIUM_PLANKS.get())
-                .add(ModBlocks.HOLMIUM_WOOD.get())
-                .add(ModBlocks.STRIPPED_HOLMIUM_LOG.get())
-                .add(ModBlocks.STRIPPED_HOLMIUM_WOOD.get());
+                .add(ModBlocks.HOLMIUM_LOG.getKey())
+                .add(ModBlocks.HOLMIUM_PLANKS.getKey())
+                .add(ModBlocks.HOLMIUM_WOOD.getKey())
+                .add(ModBlocks.STRIPPED_HOLMIUM_LOG.getKey())
+                .add(ModBlocks.STRIPPED_HOLMIUM_WOOD.getKey());
     }
 }
 

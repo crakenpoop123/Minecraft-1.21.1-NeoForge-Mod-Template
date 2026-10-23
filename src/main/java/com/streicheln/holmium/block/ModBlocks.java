@@ -4,6 +4,7 @@ import com.streicheln.holmium.Holmium;
 import com.streicheln.holmium.block.custom.ModFlammableRotatedPillarBlock;
 import com.streicheln.holmium.item.ModItems;
 import com.streicheln.holmium.material.ModFluids;
+import com.streicheln.holmium.material.ModLiquidBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Registry;
@@ -54,8 +55,11 @@ public class ModBlocks {
     public static final DeferredBlock<Block> HOLMIUM_DIRT = registerBlock("holmium_dirt",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.DIRT)));
 
-    public static final Supplier<LiquidBlock> HOLMIUM_FLUID_BLOCK = BLOCKS.register("holmium_fluid",
-            () -> new LiquidBlock(ModFluids.HOLMIUM_FLUID, BlockBehaviour.Properties.ofFullCopy(Blocks.WATER)));
+    public static final DeferredBlock<LiquidBlock> HOLMIUM_FLUID_BLOCK = BLOCKS.register("holmium_fluid",
+            () -> new ModLiquidBlock(() -> (FlowingFluid) ModFluids.HOLMIUM_FLUID.get(), BlockBehaviour.Properties.of()
+                    .replaceable().noCollission().strength(100.0F).pushReaction(PushReaction.DESTROY).noLootTable().liquid().sound(SoundType.EMPTY)
+            ));
+
 
 
 

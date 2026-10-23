@@ -13,13 +13,10 @@ public class ModFluids{
     private static final DeferredRegister<Fluid> FLUIDS = DeferredRegister.create(BuiltInRegistries.FLUID, "holmium");
 
     public static final DeferredHolder<Fluid, BaseFlowingFluid.Source> SOURCE_HOLMIUM_FLUID =
-            FLUIDS.register("holmium_fluid", () -> new BaseFlowingFluid.Source(ModFluids.HOLMIUM_FLUID_PROPERTIES));
+            FLUIDS.register("source_holmium_fluid", () -> new BaseFlowingFluid.Source(ModFluids.HOLMIUM_FLUID_PROPERTIES));
 
     public static final DeferredHolder<Fluid, BaseFlowingFluid.Flowing> FLOWING_HOLMIUM_FLUID =
             FLUIDS.register("flowing_holmium_fluid", () -> new BaseFlowingFluid.Flowing(ModFluids.HOLMIUM_FLUID_PROPERTIES));
-
-    public static final FlowingFluid HOLMIUM_FLUID = (FlowingFluid) register("holmium_fluid",
-            new WaterFluid.Source());
 
             public static final BaseFlowingFluid.Properties HOLMIUM_FLUID_PROPERTIES =
             new BaseFlowingFluid.Properties(
@@ -30,6 +27,10 @@ public class ModFluids{
                     .slopeFindDistance(4)
                     .levelDecreasePerBlock(1)
                     .block(ModBlocks.HOLMIUM_FLUID_BLOCK);
+
+    public static final DeferredHolder<Fluid, FlowingFluid> HOLMIUM_FLUID = FLUIDS.register("holmium_fluid",
+            () -> new BaseFlowingFluid.Source(ModFluids.HOLMIUM_FLUID_PROPERTIES));
+
 
     private static <T extends Fluid> T register(String key, T fluid) {
         return (T)(Registry.register(BuiltInRegistries.FLUID, key, fluid));

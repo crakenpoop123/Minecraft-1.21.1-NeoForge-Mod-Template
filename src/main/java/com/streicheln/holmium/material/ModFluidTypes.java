@@ -15,6 +15,6 @@ public class ModFluidTypes {
                        .descriptionId("fluid.holmium.holmium_fluid")
                        .density(1000)
                        .viscosity(1000)
-                       .lightLevel(0)
+                       .lightLevel(15)
             ));
 }
