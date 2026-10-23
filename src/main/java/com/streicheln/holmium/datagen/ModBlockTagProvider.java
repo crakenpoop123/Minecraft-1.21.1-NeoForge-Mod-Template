@@ -20,7 +20,8 @@ public class ModBlockTagProvider extends BlockTagsProvider{
     protected void addTags(HolderLookup.Provider provider) {
         tag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(ModBlocks.HOLMIUM_STONE.get())
-                .add(ModBlocks.COBBLED_HOLMIUM.get());
+                .add(ModBlocks.COBBLED_HOLMIUM.get())
+                .add(ModBlocks.URANIUM_ORE.get());
 
         tag(BlockTags.MINEABLE_WITH_AXE)
                 .add(ModBlocks.HOLMIUM_LOG.get())

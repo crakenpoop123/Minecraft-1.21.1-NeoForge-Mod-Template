@@ -19,7 +19,7 @@ import net.minecraft.world.level.levelgen.structure.templatesystem.TagMatchTest;
 import java.util.List;
 
 public class ModConfiguredFeatures {
-    public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_HOLMIUM_ORE_KEY = registerKey("holmium");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_URANIUM_ORE_KEY = registerKey("uranium_ore");
 
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
         RuleTest stoneReplaceables = new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES); // Replace certain tags
@@ -27,10 +27,10 @@ public class ModConfiguredFeatures {
         RuleTest netherrackReplaceables = new BlockMatchTest(Blocks.NETHERRACK); // Replace individual blocks
         RuleTest endReplaceables = new BlockMatchTest(Blocks.END_STONE);
 
-        List<OreConfiguration.TargetBlockState>  overworldHolmiumOres = List.of(
-                OreConfiguration.target(stoneReplaceables, ModBlocks.HOLMIUM_STONE.get().defaultBlockState()));
+        List<OreConfiguration.TargetBlockState>  overworldUraniumOre = List.of(
+                OreConfiguration.target(stoneReplaceables, ModBlocks.URANIUM_ORE.get().defaultBlockState()));
 
-        register(context, OVERWORLD_HOLMIUM_ORE_KEY, Feature.ORE, new OreConfiguration(overworldHolmiumOres, 9)); // Ctrl left click ore to see it all
+        register(context, OVERWORLD_URANIUM_ORE_KEY, Feature.ORE, new OreConfiguration(overworldUraniumOre, 9)); // Ctrl left click ore to see it all
     }
 
     public static ResourceKey<ConfiguredFeature<?, ?>> registerKey(String name) {
