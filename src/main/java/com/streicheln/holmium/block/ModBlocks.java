@@ -55,11 +55,6 @@ public class ModBlocks {
     public static final DeferredBlock<Block> HOLMIUM_DIRT = registerBlock("holmium_dirt",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.DIRT)));
 
-    public static final DeferredBlock<LiquidBlock> HOLMIUM_FLUID_BLOCK = BLOCKS.register("holmium_fluid",
-            () -> new ModLiquidBlock(() -> (FlowingFluid) ModFluids.HOLMIUM_FLUID.get(), BlockBehaviour.Properties.of()
-                    .replaceable().noCollission().strength(100.0F).pushReaction(PushReaction.DESTROY).noLootTable().liquid().sound(SoundType.EMPTY)
-            ));
-
 
 
 
