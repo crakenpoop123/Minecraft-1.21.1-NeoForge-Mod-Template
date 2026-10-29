@@ -9,6 +9,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
+import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
 import net.neoforged.neoforge.client.model.generators.ModelFile;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.registries.DeferredBlock;
@@ -45,10 +46,19 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockItem(ModBlocks.HOLMIUM_RED_MUSHROOM);
 
         blockWithItem(ModBlocks.HOLMIUM_DIRT);
-        blockItem(ModBlocks.HOLMIUM_GRASS);
 
+        models().cubeBottomTop("holmium_grass",
+                ResourceLocation.parse("holmium:block/holmium_grass"),
+                ResourceLocation.parse("holmium:block/holmium_dirt"),
+                ResourceLocation.parse("holmium:block/holmium_grass_top")
+        );
+        blockItem(ModBlocks.HOLMIUM_GRASS);
+        getVariantBuilder(ModBlocks.HOLMIUM_GRASS.get()).forAllStates(state ->
+            ConfiguredModel.builder().modelFile(models().getExistingFile(ResourceLocation.parse("holmium:block/holmium_grass"))).build()
+                );
         blockWithItem(ModBlocks.URANIUM_ORE);
     }
+
 
     private void saplingBlock(DeferredBlock<Block> blockRegistryObject) {
         simpleBlock(blockRegistryObject.get(),

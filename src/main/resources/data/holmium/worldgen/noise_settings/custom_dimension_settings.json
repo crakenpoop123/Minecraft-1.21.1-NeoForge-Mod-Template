@@ -479,7 +479,7 @@
                               "then_run": {
                                 "type": "minecraft:block",
                                 "result_state": {
-                                  "Name": "minecraft:grass_block",
+                                  "Name": "holmium:holmium_grass",
                                   "Properties": {
                                     "snowy": "false"
                                   }

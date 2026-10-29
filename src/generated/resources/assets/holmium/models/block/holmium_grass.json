@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "holmium:block/holmium_dirt",
+    "side": "holmium:block/holmium_grass",
+    "top": "holmium:block/holmium_grass_top"
+  }
+}

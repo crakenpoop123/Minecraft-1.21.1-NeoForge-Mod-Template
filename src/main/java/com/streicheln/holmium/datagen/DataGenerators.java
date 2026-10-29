@@ -39,6 +39,6 @@ public class DataGenerators {
         generator.addProvider(event.includeServer(), new ModRecipeProvider(packOutput, lookupProvider)); // Recipe provider
         generator.addProvider(event.includeClient(), new ModBlockStateProvider(packOutput, existingFileHelper)); // Block provider
         generator.addProvider(event.includeClient(), new ModItemModelProvider(packOutput, existingFileHelper)); // Item provider
-
+        //generator.addProvider(event.includeClient(), new ModBiomeTagsProvider(packOutput,  lookupProvider, existingFileHelper));
     }
 }
