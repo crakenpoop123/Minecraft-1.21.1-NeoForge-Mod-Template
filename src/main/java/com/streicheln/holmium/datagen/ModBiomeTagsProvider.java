@@ -23,6 +23,7 @@ public class ModBiomeTagsProvider extends BiomeTagsProvider {
     @Override
     protected void addTags(HolderLookup.Provider provider) {
         this.addTags(BiomeTags.HAS_ANCIENT_CITY).add(Biomes.PLAINS);
+
     }
 
     private Collection<ResourceKey<Biome>> addTags(TagKey<Biome> hasAncientCity) {

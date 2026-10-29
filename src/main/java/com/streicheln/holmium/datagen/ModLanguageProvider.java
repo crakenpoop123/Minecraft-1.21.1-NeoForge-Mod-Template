@@ -22,6 +22,7 @@ public class ModLanguageProvider extends LanguageProvider {
         add(ModBlocks.HOLMIUM_WOOD.get(), "Holmium Wood");
         add(ModBlocks.STRIPPED_HOLMIUM_LOG.get(), "Stripped Holmium Log");
         add(ModBlocks.STRIPPED_HOLMIUM_WOOD.get(), "Stripped Holmium Wood");
+        add(ModBlocks.HOLMIUM_GRASS.get(), "Holmium Grass");
 
     }
 }
