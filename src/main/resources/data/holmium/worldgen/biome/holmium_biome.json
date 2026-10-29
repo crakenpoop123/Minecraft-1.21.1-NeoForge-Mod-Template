@@ -10,16 +10,16 @@
   "temperature": 0.8,
   "has_precipitation": true,
   "effects": {
-    "fog_color": 12638463,
+    "fog_color": 10349710,
     "mood_sound": {
       "block_search_extent": 8,
       "offset": 2.0,
       "sound": "minecraft:ambient.cave",
       "tick_delay": 6000
     },
-    "sky_color": 7907327,
-    "water_color": 4159204,
-    "water_fog_color": 329011
+    "sky_color": 10349710,
+    "water_color": 10349710,
+    "water_fog_color": 10349710
   },
   "features": [
     [],
