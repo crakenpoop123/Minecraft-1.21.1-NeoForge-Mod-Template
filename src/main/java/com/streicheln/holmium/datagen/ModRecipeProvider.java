@@ -36,6 +36,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_block", has(ModBlocks.HOLMIUM_STONE)).save(recipeOutput, "holmium:example_item_from_holmium_stone");
 
         oreSmelting(recipeOutput, HOLMIUM_SMELTABLES, RecipeCategory.MISC, ModBlocks.HOLMIUM_STONE.get(), 10f, 200, "holmium"); // SMELTING EXAMPLES
-        oreBlasting(recipeOutput, HOLMIUM_SMELTABLES, RecipeCategory.MISC, ModBlocks.HOLMIUM_STONE.get(), 2000000000f, 100, "holmium");
+        oreBlasting(recipeOutput, HOLMIUM_SMELTABLES, RecipeCategory.MISC, ModBlocks.HOLMIUM_STONE.get(), 20f, 100, "holmium");
     }
 }

@@ -28,6 +28,12 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
                         applyExplosionDecay(ModBlocks.HOLMIUM_STONE.get(),
                                 LootItem.lootTableItem(ModBlocks.COBBLED_HOLMIUM.get()))));
 
+        add(ModBlocks.HOLMIUM_GRASS.get(),
+                block -> createSilkTouchDispatchTable(ModBlocks.HOLMIUM_GRASS.get(),
+                        applyExplosionDecay(ModBlocks.HOLMIUM_GRASS.get(),
+                                LootItem.lootTableItem(ModBlocks.HOLMIUM_DIRT.get()))));
+
+
         ModBlocks.BLOCKS.getEntries().stream()
                 .map(DeferredHolder::get)
                 .filter(block -> !this.map.containsKey(block.getLootTable())) // Skip blocks predefined

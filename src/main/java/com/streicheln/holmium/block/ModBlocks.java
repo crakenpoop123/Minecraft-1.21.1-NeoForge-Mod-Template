@@ -3,8 +3,7 @@ package com.streicheln.holmium.block;
 import com.streicheln.holmium.Holmium;
 import com.streicheln.holmium.block.custom.ModFlammableRotatedPillarBlock;
 import com.streicheln.holmium.item.ModItems;
-import com.streicheln.holmium.material.ModFluids;
-import com.streicheln.holmium.material.ModLiquidBlock;
+import com.streicheln.holmium.worldgen.tree.ModTreeGrowers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Registry;
@@ -90,7 +89,7 @@ public class ModBlocks {
             });
 
     public static final DeferredBlock<Block> HOLMIUM_SAPLING = registerBlock("holmium_sapling",
-            () -> new SaplingBlock(TreeGrower.OAK, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
+            () -> new SaplingBlock(ModTreeGrowers.HOLMIUM, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
 
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {

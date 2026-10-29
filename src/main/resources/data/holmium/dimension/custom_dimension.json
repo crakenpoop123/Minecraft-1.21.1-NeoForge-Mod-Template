@@ -6,7 +6,7 @@
     "biome_source": {
       "biomes": [
         {
-          "biome": "minecraft:plains",
+          "biome": "holmium:holmium_biome",
           "parameters": {
             "continentalness": [
               -0.19,
