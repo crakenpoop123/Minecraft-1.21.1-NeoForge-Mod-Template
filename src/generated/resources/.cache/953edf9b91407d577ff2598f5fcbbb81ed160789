@@ -1,5 +1,10 @@
-// 1.21.1	2026-10-30T12:39:55.0386243	Tags for minecraft:block mod id holmium
+// 1.21.1	2026-10-30T14:57:47.4935254	Tags for minecraft:block mod id holmium
+8ba3ad9b1504451e3896dc33d0e7754c17e527b4 data/holmium/tags/block/holmium_stone_replaceables.json
+cf0262d11cf275f2a68d31563eb0df122c1278c0 data/minecraft/tags/block/animals_spawnable_on.json
 cf0262d11cf275f2a68d31563eb0df122c1278c0 data/minecraft/tags/block/dirt.json
+cf0262d11cf275f2a68d31563eb0df122c1278c0 data/minecraft/tags/block/enderman_holdable.json
+b7216521532f11963c001e69130a91cfc6d36bae data/minecraft/tags/block/leaves.json
 19471e3e609fca694348a9fb3073ce912516a2dc data/minecraft/tags/block/logs_that_burn.json
 0f6c3105f961b840c2a91baf586647ea75299af2 data/minecraft/tags/block/mineable/axe.json
 8566731665ad4fcbcfb377c85ea47711aea7cc4b data/minecraft/tags/block/mineable/pickaxe.json
+c47be9cba42c0ad31ecc499782ca77ad4eff2d40 data/minecraft/tags/block/saplings.json

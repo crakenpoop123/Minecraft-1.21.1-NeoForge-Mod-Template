@@ -5,6 +5,7 @@ import com.streicheln.holmium.item.ModCreativeModeTabs;
 import com.streicheln.holmium.item.ModItems;
 import com.streicheln.holmium.material.ModFluidTypes;
 import com.streicheln.holmium.material.ModFluids;
+import com.streicheln.holmium.worldgen.ModBiomes;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -53,6 +54,7 @@ public class Holmium {
 
         ModBlocks.register(modEventBus);
         ModItems.register(modEventBus);
+
 
         ModFluids.register(modEventBus);
         ModFluidTypes.register(modEventBus);

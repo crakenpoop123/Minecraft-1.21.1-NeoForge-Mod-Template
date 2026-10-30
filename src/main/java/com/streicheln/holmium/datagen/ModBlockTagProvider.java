@@ -2,6 +2,7 @@ package com.streicheln.holmium.datagen;
 
 import com.streicheln.holmium.Holmium;
 import com.streicheln.holmium.block.ModBlocks;
+import com.streicheln.holmium.util.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
@@ -30,15 +31,28 @@ public class ModBlockTagProvider extends BlockTagsProvider{
                 .add(ModBlocks.STRIPPED_HOLMIUM_LOG.getKey())
                 .add(ModBlocks.STRIPPED_HOLMIUM_WOOD.getKey());
 
-        tag(BlockTags.LOGS_THAT_BURN)
+        tag(BlockTags.LOGS_THAT_BURN) // there is also completes find tree tutorial
                 .add(ModBlocks.HOLMIUM_LOG.get())
                 .add(ModBlocks.STRIPPED_HOLMIUM_LOG.get())
                 .add(ModBlocks.HOLMIUM_WOOD.get())
                 .add(ModBlocks.STRIPPED_HOLMIUM_WOOD.get());
+
         tag(BlockTags.DIRT)
                 .add(ModBlocks.HOLMIUM_DIRT.get())
                 .add(ModBlocks.HOLMIUM_GRASS.get());
+        tag(BlockTags.ANIMALS_SPAWNABLE_ON)
+                .add(ModBlocks.HOLMIUM_DIRT.get())
+                .add(ModBlocks.HOLMIUM_GRASS.get());
+        tag(BlockTags.ENDERMAN_HOLDABLE)
+                .add(ModBlocks.HOLMIUM_DIRT.get())
+                .add(ModBlocks.HOLMIUM_GRASS.get());
+        tag(BlockTags.LEAVES)
+                .add(ModBlocks.HOLMIUM_LEAVES.get());
+        tag(BlockTags.SAPLINGS)
+                .add(ModBlocks.HOLMIUM_SAPLING.get());
 
+        tag(ModTags.Blocks.HOLMIUM_STONE_REPLACEABLES)
+                .add(ModBlocks.HOLMIUM_STONE.get());
     }
 }
 

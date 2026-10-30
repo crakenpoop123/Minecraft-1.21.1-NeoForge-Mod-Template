@@ -17,5 +17,7 @@ public class ModItemModelProvider extends ItemModelProvider {
     protected void registerModels() {
         basicItem(ModItems.ITEM_NAME.get());
         basicItem(ModBlocks.HOLMIUM_SAPLING.asItem());
+        basicItem(ModItems.RAW_URANIUM.get());
+        basicItem(ModItems.URANIUM_BAR.get());
     }
 }

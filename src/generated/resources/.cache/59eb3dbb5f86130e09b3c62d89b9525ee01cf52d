@@ -1,4 +1,4 @@
-// 1.21.1	2026-10-30T09:54:12.5450027	Loot Tables
+// 1.21.1	2026-10-30T15:09:07.5120919	Loot Tables
 4f8bafa2a1c2c0e1356f09360ff2f55f183282ab data/holmium/loot_table/blocks/cobbled_holmium.json
 620f1564c8d65b2b1c12b8c0c81db15d592a9264 data/holmium/loot_table/blocks/holmium_brown_mushroom.json
 f5e0f4eb560104e06289701df2f8360c155c7852 data/holmium/loot_table/blocks/holmium_dirt.json
@@ -12,4 +12,4 @@ c9f975a6276237b6d135cc9d44bb00977eaaf878 data/holmium/loot_table/blocks/holmium_
 dde3b497b0a6560f9aca70cfe367506fe9da8d51 data/holmium/loot_table/blocks/holmium_wood.json
 e41cfe29b9483a503e2e5f34e3a803f7c25d4af1 data/holmium/loot_table/blocks/stripped_holmium_log.json
 d62e3a854bff1240555a2ee479cefc73be2b40b5 data/holmium/loot_table/blocks/stripped_holmium_wood.json
-646a5230c98dada239c14948c8ff3d8625fa8409 data/holmium/loot_table/blocks/uranium_ore.json
+b48f9836084f3169552b8b82d7136abc9bf13e64 data/holmium/loot_table/blocks/uranium_ore.json

@@ -44,7 +44,7 @@ public class ModBlocks {
     public static final DeferredBlock<Block> STRIPPED_HOLMIUM_WOOD = registerBlock("stripped_holmium_wood",
             () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_OAK_WOOD)));
     public static final DeferredBlock<Block> URANIUM_ORE = registerBlock("uranium_ore",
-            () -> new DropExperienceBlock(UniformInt.of(4, 7), BlockBehaviour.Properties.of().mapColor(MapColor.STONE).requiresCorrectToolForDrops().strength(3.0F, 7.0F)));
+            () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).requiresCorrectToolForDrops().strength(3.0F, 7.0F)));
     public static final DeferredBlock<Block> HOLMIUM_BROWN_MUSHROOM = registerBlock("holmium_brown_mushroom",
             () -> new MushroomBlock(TreeFeatures.HUGE_BROWN_MUSHROOM, BlockBehaviour.Properties.ofFullCopy(Blocks.BROWN_MUSHROOM)));
     public static final DeferredBlock<Block> HOLMIUM_RED_MUSHROOM = registerBlock("holmium_red_mushroom",

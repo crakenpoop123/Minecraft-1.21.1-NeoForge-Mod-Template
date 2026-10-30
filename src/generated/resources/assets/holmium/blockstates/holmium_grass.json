@@ -1,6 +1,9 @@
 {
   "variants": {
-    "": {
+    "snowy=false": {
+      "model": "holmium:block/holmium_grass"
+    },
+    "snowy=true": {
       "model": "holmium:block/holmium_grass"
     }
   }

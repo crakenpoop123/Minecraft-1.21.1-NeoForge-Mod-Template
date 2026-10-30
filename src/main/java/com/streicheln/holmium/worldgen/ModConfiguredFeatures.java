@@ -2,6 +2,7 @@ package com.streicheln.holmium.worldgen;
 
 import com.streicheln.holmium.Holmium;
 import com.streicheln.holmium.block.ModBlocks;
+import com.streicheln.holmium.util.ModTags;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
@@ -34,13 +35,13 @@ public class ModConfiguredFeatures {
 
 
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
-        RuleTest stoneReplaceables = new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES); // Replace certain tags
-        RuleTest deepslateReplaceables = new TagMatchTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES);
+        RuleTest holmiumStoneReplaceables = new TagMatchTest(ModTags.Blocks.HOLMIUM_STONE_REPLACEABLES); // Replace certain tags
         RuleTest netherrackReplaceables = new BlockMatchTest(Blocks.NETHERRACK); // Replace individual blocks
         RuleTest endReplaceables = new BlockMatchTest(Blocks.END_STONE);
 
+
         List<OreConfiguration.TargetBlockState>  overworldUraniumOre = List.of(
-                OreConfiguration.target(stoneReplaceables, ModBlocks.URANIUM_ORE.get().defaultBlockState()));
+                OreConfiguration.target(holmiumStoneReplaceables, ModBlocks.URANIUM_ORE.get().defaultBlockState()));
 
         register(context, OVERWORLD_URANIUM_ORE_KEY, Feature.ORE, new OreConfiguration(overworldUraniumOre, 9)); // Ctrl left click ore to see it all
 

@@ -15,6 +15,8 @@ import java.awt.*;
 public class ModTags {
     public static class Blocks {
 
+        public static final TagKey<Block> HOLMIUM_STONE_REPLACEABLES = createTag("holmium_stone_replaceables");
+
         private static TagKey<Block> createTag(String name){
             return BlockTags.create(ResourceLocation.fromNamespaceAndPath(Holmium.MODID, name));
         }
@@ -28,7 +30,7 @@ public class ModTags {
         }
 
     }
-    public static class Biomes {
+    public static class Biomes { // I'm half sure this is useless, can't be bothered to delete >-<
 
         public static final TagKey<Biome> IS_HOLMIUM_DIMENSION = create("holmium_dimension");
 
@@ -36,4 +38,5 @@ public class ModTags {
             return TagKey.create(Registries.BIOME, ResourceLocation.withDefaultNamespace(name));
         }
     }
+
 }

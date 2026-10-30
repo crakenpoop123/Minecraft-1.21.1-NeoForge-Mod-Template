@@ -1,6 +1,7 @@
 package com.streicheln.holmium.datagen;
 
 import com.streicheln.holmium.block.ModBlocks;
+import com.streicheln.holmium.item.ModItems;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.loot.BlockLootSubProvider;
@@ -32,6 +33,11 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
                 block -> createSilkTouchDispatchTable(ModBlocks.HOLMIUM_GRASS.get(),
                         applyExplosionDecay(ModBlocks.HOLMIUM_GRASS.get(),
                                 LootItem.lootTableItem(ModBlocks.HOLMIUM_DIRT.get()))));
+
+        add(ModBlocks.URANIUM_ORE.get(),
+                block -> createSilkTouchDispatchTable(ModBlocks.URANIUM_ORE.get(),
+                        applyExplosionDecay(ModBlocks.URANIUM_ORE.get(),
+                                LootItem.lootTableItem(ModItems.RAW_URANIUM.get()))));
 
 
         ModBlocks.BLOCKS.getEntries().stream()

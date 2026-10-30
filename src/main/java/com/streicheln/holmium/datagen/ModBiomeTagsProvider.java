@@ -1,6 +1,7 @@
 package com.streicheln.holmium.datagen;
 
 import com.streicheln.holmium.Holmium;
+import com.streicheln.holmium.worldgen.ModBiomes;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.BiomeTagsProvider;
@@ -22,11 +23,7 @@ public class ModBiomeTagsProvider extends BiomeTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
-        this.addTags(BiomeTags.HAS_ANCIENT_CITY).add(Biomes.PLAINS);
 
     }
 
-    private Collection<ResourceKey<Biome>> addTags(TagKey<Biome> hasAncientCity) {
-        return java.util.List.of();
-    }
 }
