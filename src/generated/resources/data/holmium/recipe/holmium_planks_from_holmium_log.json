@@ -3,11 +3,11 @@
   "category": "misc",
   "ingredients": [
     {
-      "item": "holmium:holmium_stone"
+      "tag": "holmium:holmium_logs"
     }
   ],
   "result": {
-    "count": 9,
-    "id": "holmium:item_name"
+    "count": 4,
+    "id": "holmium:holmium_planks"
   }
 }

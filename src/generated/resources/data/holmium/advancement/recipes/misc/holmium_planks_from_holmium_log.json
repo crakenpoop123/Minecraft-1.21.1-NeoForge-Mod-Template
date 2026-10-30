@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_item_name": {
+    "has_block": {
       "conditions": {
         "items": [
           {
-            "items": "holmium:item_name"
+            "items": "holmium:holmium_log"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:holmium_stone_from_smelting_item_name"
+        "recipe": "holmium:holmium_planks_from_holmium_log"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_item_name"
+      "has_block"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:holmium_stone_from_smelting_item_name"
+      "holmium:holmium_planks_from_holmium_log"
     ]
   }
 }

@@ -1,0 +1,4 @@
+// 1.21.1	2026-10-30T18:11:21.7893937	Tags for minecraft:item mod id holmium
+19471e3e609fca694348a9fb3073ce912516a2dc data/holmium/tags/item/holmium_logs.json
+19471e3e609fca694348a9fb3073ce912516a2dc data/minecraft/tags/item/logs_that_burn.json
+493dd76c07e9b8e693c0fb2dfff3627171afb8a5 data/minecraft/tags/item/planks.json

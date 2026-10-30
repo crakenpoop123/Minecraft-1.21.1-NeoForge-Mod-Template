@@ -53,6 +53,8 @@ public class ModBlockTagProvider extends BlockTagsProvider{
 
         tag(ModTags.Blocks.HOLMIUM_STONE_REPLACEABLES)
                 .add(ModBlocks.HOLMIUM_STONE.get());
+
+
     }
 }
 

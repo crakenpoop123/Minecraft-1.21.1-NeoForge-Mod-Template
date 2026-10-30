@@ -25,6 +25,8 @@ public class ModTags {
 
         public static final TagKey<Item> EXAMPLE_ITEMS = createTag("example_items");
 
+        public static final TagKey<Item> HOLMIUM_LOGS = createTag("holmium_logs");
+
         private static TagKey<Item> createTag(String name){
             return ItemTags.create(ResourceLocation.fromNamespaceAndPath(Holmium.MODID, name));
         }
