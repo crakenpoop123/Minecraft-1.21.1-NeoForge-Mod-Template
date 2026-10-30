@@ -4,7 +4,7 @@
     "Name": "holmium:holmium_stone"
   },
   "default_fluid": {
-    "Name": "minecraft:water",
+    "Name": "holmium:holmium_fluid",
     "Properties": {
       "level": "0"
     }

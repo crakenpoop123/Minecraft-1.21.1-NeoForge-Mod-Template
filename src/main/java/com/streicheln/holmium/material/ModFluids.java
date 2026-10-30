@@ -45,6 +45,7 @@ public class ModFluids{
     public static final DeferredBlock<LiquidBlock> HOLMIUM_FLUID_BLOCK = BLOCKS.register("holmium_fluid",
             () -> new ModLiquidBlock(HOLMIUM_FLUID, BlockBehaviour.Properties.of()
                     .replaceable().noCollission().strength(100.0F).pushReaction(PushReaction.DESTROY).noLootTable().liquid().sound(SoundType.EMPTY).lightLevel(state -> 15)
+                    .ignitedByLava()
             ));
 
     public static void register(IEventBus eventBus) {

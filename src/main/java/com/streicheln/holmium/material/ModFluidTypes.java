@@ -22,8 +22,8 @@ public class ModFluidTypes{
                     0xA1E038D0, new Vector3f(224f/255f, 56f/255f, 208f/255f),
                     FluidType.Properties.create()
                        .descriptionId("fluid.holmium.holmium_fluid")
-                       .density(1000)
-                       .viscosity(1000)
+                       .density(100000)
+                       .viscosity(100000)
                        .lightLevel(15)
             ));
 
