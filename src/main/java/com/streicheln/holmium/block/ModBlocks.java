@@ -50,7 +50,7 @@ public class ModBlocks {
     public static final DeferredBlock<Block> HOLMIUM_RED_MUSHROOM = registerBlock("holmium_red_mushroom",
             () -> new MushroomBlock(TreeFeatures.HUGE_RED_MUSHROOM, BlockBehaviour.Properties.ofFullCopy(Blocks.RED_MUSHROOM)));
     public static final DeferredBlock<Block> HOLMIUM_GRASS = registerBlock("holmium_grass",
-            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.GRASS_BLOCK)));
+            () -> new GrassBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GRASS_BLOCK)));
     public static final DeferredBlock<Block> HOLMIUM_DIRT = registerBlock("holmium_dirt",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.DIRT)));
 

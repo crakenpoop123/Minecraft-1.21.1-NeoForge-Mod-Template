@@ -1,4 +1,5 @@
-// 1.21.1	2026-10-30T10:16:59.7403228	Tags for minecraft:block mod id holmium
+// 1.21.1	2026-10-30T12:39:55.0386243	Tags for minecraft:block mod id holmium
+cf0262d11cf275f2a68d31563eb0df122c1278c0 data/minecraft/tags/block/dirt.json
 19471e3e609fca694348a9fb3073ce912516a2dc data/minecraft/tags/block/logs_that_burn.json
 0f6c3105f961b840c2a91baf586647ea75299af2 data/minecraft/tags/block/mineable/axe.json
 8566731665ad4fcbcfb377c85ea47711aea7cc4b data/minecraft/tags/block/mineable/pickaxe.json
