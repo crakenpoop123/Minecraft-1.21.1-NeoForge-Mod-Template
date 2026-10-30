@@ -45,13 +45,16 @@ public class ModConfiguredFeatures {
         register(context, OVERWORLD_URANIUM_ORE_KEY, Feature.ORE, new OreConfiguration(overworldUraniumOre, 9)); // Ctrl left click ore to see it all
 
         register(context, HOLMIUM_TREE_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
-                BlockStateProvider.simple(ModBlocks.HOLMIUM_LOG.get()),
-                new StraightTrunkPlacer(4, 2, 0),
+                BlockStateProvider.simple(ModBlocks.HOLMIUM_LOG.get()), // What block the trunk is
+                new StraightTrunkPlacer(4, 2, 0), // How tall it is
 
-                BlockStateProvider.simple(ModBlocks.HOLMIUM_LEAVES.get()),
-                new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(3), 3),
+                BlockStateProvider.simple(ModBlocks.HOLMIUM_LEAVES.get()), // What block the leaves are
+                new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 3), // What size it is
 
-                new TwoLayersFeatureSize(1, 0, 2)).build());
+                new TwoLayersFeatureSize(1, 0, 1)) // How much space it needs to grow
+                .ignoreVines() // no clue
+                .dirt(BlockStateProvider.simple(ModBlocks.HOLMIUM_DIRT.get()))
+                .build());
     }
 
     public static ResourceKey<ConfiguredFeature<?, ?>> registerKey(String name) {

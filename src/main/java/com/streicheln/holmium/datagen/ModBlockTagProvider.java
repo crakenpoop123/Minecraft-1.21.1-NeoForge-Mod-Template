@@ -30,11 +30,15 @@ public class ModBlockTagProvider extends BlockTagsProvider{
                 .add(ModBlocks.STRIPPED_HOLMIUM_LOG.getKey())
                 .add(ModBlocks.STRIPPED_HOLMIUM_WOOD.getKey());
 
-        this.tag(BlockTags.LOGS_THAT_BURN)
+        tag(BlockTags.LOGS_THAT_BURN)
                 .add(ModBlocks.HOLMIUM_LOG.get())
                 .add(ModBlocks.STRIPPED_HOLMIUM_LOG.get())
                 .add(ModBlocks.HOLMIUM_WOOD.get())
                 .add(ModBlocks.STRIPPED_HOLMIUM_WOOD.get());
+        tag(BlockTags.DIRT)
+                .add(ModBlocks.HOLMIUM_DIRT.get())
+                .add(ModBlocks.HOLMIUM_GRASS.get());
+
     }
 }
 
