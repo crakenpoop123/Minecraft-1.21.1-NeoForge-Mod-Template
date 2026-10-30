@@ -1,6 +1,7 @@
 package com.streicheln.holmium;
 
 import com.streicheln.holmium.block.ModBlocks;
+import com.streicheln.holmium.commands.ModCommands;
 import com.streicheln.holmium.item.ModCreativeModeTabs;
 import com.streicheln.holmium.item.ModItems;
 import com.streicheln.holmium.material.ModFluidTypes;
@@ -56,6 +57,8 @@ public class Holmium {
 
         ModFluids.register(modEventBus);
         ModFluidTypes.register(modEventBus);
+
+
 
         // Register ourselves for server and other game events we are interested in.
         // Note that this is necessary if and only if we want *this* class (ExampleMod) to respond directly to events.
