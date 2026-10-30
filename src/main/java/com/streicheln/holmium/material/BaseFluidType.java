@@ -31,6 +31,7 @@ public class BaseFluidType extends FluidType {
         this.fogColour = fogColour;
     }
 
+
     public ResourceLocation getStillTexture() {
         return stillTexture;
     }

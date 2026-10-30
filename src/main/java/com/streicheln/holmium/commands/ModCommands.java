@@ -57,7 +57,7 @@ public class ModCommands {
 
     @SubscribeEvent
     public static void onRegisterCommands(RegisterCommandsEvent event) {
-        event.getDispatcher().register(ExplodeCommand.register());
+        event.getDispatcher().register(LaunchCommand.register());
     }
 
 }
