@@ -7,6 +7,9 @@ import com.streicheln.holmium.item.ModItems;
 import com.streicheln.holmium.material.ModFluidTypes;
 import com.streicheln.holmium.material.ModFluids;
 import com.streicheln.holmium.worldgen.ModBiomes;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
+import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -98,4 +101,6 @@ public class Holmium {
         // Do something when the server starts
         LOGGER.info("HELLO from server starting");
     }
+
+
 }

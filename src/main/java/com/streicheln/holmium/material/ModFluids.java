@@ -33,14 +33,14 @@ public class ModFluids{
 
     public static final BaseFlowingFluid.Properties HOLMIUM_FLUID_PROPERTIES =
             new BaseFlowingFluid.Properties(
-                    ModFluidTypes.HOLMIUM_FLUID_TYPE,
-                    SOURCE_HOLMIUM_FLUID,
-                    FLOWING_HOLMIUM_FLUID
+                    () -> ModFluidTypes.HOLMIUM_FLUID_TYPE.get(),
+                    () -> SOURCE_HOLMIUM_FLUID.get(),
+                    () -> FLOWING_HOLMIUM_FLUID.get()
             )
                     .slopeFindDistance(4)
                     .levelDecreasePerBlock(1)
-                    .block(ModFluids.HOLMIUM_FLUID_BLOCK)
-                    .bucket(ModItems.HOLMIUM_FLUID_BUCKET);
+                    .block(() -> ModFluids.HOLMIUM_FLUID_BLOCK.get())
+                    .bucket(() -> ModItems.HOLMIUM_FLUID_BUCKET.get());
 
     public static final DeferredBlock<LiquidBlock> HOLMIUM_FLUID_BLOCK = BLOCKS.register("holmium_fluid",
             () -> new ModLiquidBlock(HOLMIUM_FLUID, BlockBehaviour.Properties.of()

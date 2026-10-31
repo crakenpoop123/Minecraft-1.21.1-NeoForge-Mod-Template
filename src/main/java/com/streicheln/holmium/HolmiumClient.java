@@ -1,6 +1,9 @@
 package com.streicheln.holmium;
 
+import com.streicheln.holmium.material.ModFluids;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
@@ -27,5 +30,9 @@ public class HolmiumClient {
         // Some client setup code
         Holmium.LOGGER.info("HELLO FROM CLIENT SETUP");
         Holmium.LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
+
+
+        ItemBlockRenderTypes.setRenderLayer(ModFluids.SOURCE_HOLMIUM_FLUID.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModFluids.FLOWING_HOLMIUM_FLUID.get(), RenderType.translucent());
     }
 }
