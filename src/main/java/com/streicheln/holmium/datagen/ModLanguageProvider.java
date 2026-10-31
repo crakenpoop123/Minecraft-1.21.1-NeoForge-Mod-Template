@@ -35,5 +35,6 @@ public class ModLanguageProvider extends LanguageProvider {
         add(ModBlocks.STRIPPED_HOLMIUM_WOOD.get(), "Stripped Holmium Wood");
         add(ModBlocks.HOLMIUM_GRASS.get(), "Holmium Grass");
         add(ModBlocks.URANIUM_ORE.get(), "Uranium Ore");
+        add(ModItems.HOLMIUM_FLUID_BUCKET.get(), "Bucket of Holmium Fluid");
     }
 }

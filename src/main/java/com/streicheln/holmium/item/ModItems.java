@@ -1,7 +1,11 @@
 package com.streicheln.holmium.item;
 
 import com.streicheln.holmium.Holmium;
+import com.streicheln.holmium.material.ModFluids;
+import net.minecraft.world.food.FoodProperties;
+import net.minecraft.world.item.BucketItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -15,6 +19,9 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> URANIUM_BAR = ITEMS.register("uranium_bar",
             () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> HOLMIUM_FLUID_BUCKET = ITEMS.register("holmium_fluid_bucket",
+            () -> new BucketItem(ModFluids.SOURCE_HOLMIUM_FLUID.get(), new Item.Properties()
+                    .stacksTo(1).craftRemainder(Items.BUCKET)));
 
 
 

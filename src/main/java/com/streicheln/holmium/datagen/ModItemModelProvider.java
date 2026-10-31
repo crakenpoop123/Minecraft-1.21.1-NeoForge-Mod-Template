@@ -19,5 +19,6 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModBlocks.HOLMIUM_SAPLING.asItem());
         basicItem(ModItems.RAW_URANIUM.get());
         basicItem(ModItems.URANIUM_BAR.get());
+        basicItem(ModItems.HOLMIUM_FLUID_BUCKET.get());
     }
 }

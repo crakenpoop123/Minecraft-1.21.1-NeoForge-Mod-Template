@@ -32,6 +32,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.URANIUM_ORE);
                         output.accept(ModItems.RAW_URANIUM);
                         output.accept(ModItems.URANIUM_BAR);
+                        output.accept(ModItems.HOLMIUM_FLUID_BUCKET);
 
                     }).build());
 
