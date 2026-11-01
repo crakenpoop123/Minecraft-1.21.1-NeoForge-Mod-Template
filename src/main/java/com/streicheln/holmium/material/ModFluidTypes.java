@@ -17,6 +17,7 @@ public class ModFluidTypes{
 
     public static final ResourceLocation HOLMIUM_FLUID_ALL_RL = ResourceLocation.parse("holmium:block/sum_bullshit");
 
+
     public static final DeferredHolder<FluidType, FluidType> HOLMIUM_FLUID_TYPE =
             FLUID_TYPES.register("holmium_fluid_type", () -> new BaseFluidType(HOLMIUM_FLUID_ALL_RL,HOLMIUM_FLUID_ALL_RL,HOLMIUM_FLUID_ALL_RL,
                     872415231, new Vector3f(1.0f, 1.0f, 1.0f),

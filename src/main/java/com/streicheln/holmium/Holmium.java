@@ -54,6 +54,8 @@ public class Holmium {
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
+
+
         ModCreativeModeTabs.register(modEventBus);
 
         ModBlocks.register(modEventBus);
