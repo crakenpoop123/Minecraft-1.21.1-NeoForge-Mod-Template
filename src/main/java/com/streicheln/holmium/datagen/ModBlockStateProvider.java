@@ -57,6 +57,11 @@ public class ModBlockStateProvider extends BlockStateProvider {
             ConfiguredModel.builder().modelFile(models().getExistingFile(ResourceLocation.parse("holmium:block/holmium_grass"))).build()
                 );
         blockWithItem(ModBlocks.URANIUM_ORE);
+        blockWithItem(ModBlocks.CESIUM_BLOCK);
+        blockWithItem(ModBlocks.CESIUM_ORE);
+
+
+
     }
 
 
