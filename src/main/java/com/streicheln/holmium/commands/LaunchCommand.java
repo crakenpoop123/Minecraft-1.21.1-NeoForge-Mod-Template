@@ -24,7 +24,7 @@ public class LaunchCommand {
 
     private static int explode(CommandSourceStack source, Collection<? extends Entity> targets) {
         for (Entity entity : targets) {
-            entity.setDeltaMovement(new Vec3(0, 10000000, 0));
+            entity.setDeltaMovement(new Vec3(0, 1000, 0));
             entity.hurtMarked = true;
         }
 
