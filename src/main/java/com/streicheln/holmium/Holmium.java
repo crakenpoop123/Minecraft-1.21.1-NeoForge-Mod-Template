@@ -9,7 +9,10 @@ import com.streicheln.holmium.material.ModFluids;
 import com.streicheln.holmium.worldgen.ModBiomes;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.world.entity.EntityType;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
+import net.neoforged.neoforge.common.NeoForgeMod;
+import net.neoforged.neoforge.event.entity.EntityAttributeModificationEvent;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -39,6 +42,8 @@ import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
+
+import java.util.jar.Attributes;
 
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
 @Mod(Holmium.MODID)
@@ -103,6 +108,7 @@ public class Holmium {
         // Do something when the server starts
         LOGGER.info("HELLO from server starting");
     }
+
 
 
 }

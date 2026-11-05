@@ -22,6 +22,13 @@ public class ModLanguageProvider extends LanguageProvider {
 
     private void addItemTranslation() {
         add(ModItems.RAW_URANIUM.toStack(), "Raw Uranium");
+        add(ModItems.URANIUM_BAR.toStack(), "Uranium Ingot");
+        add(ModItems.ITEM_NAME.toStack(), "Femboy Juice");
+        add(ModItems.HOLMIUM_FLUID_BUCKET.toStack(), "Bucket of Holmium Fluid");
+        add(ModItems.URANIUM_HELMET.toStack(), "Uranium Helmet");
+        add(ModItems.URANIUM_CHESTPLATE.toStack(), "Uranium Chestplate");
+        add(ModItems.URANIUM_LEGGINGS.toStack(), "Uranium Leggings");
+        add(ModItems.URANIUM_BOOTS.toStack(), "Uranium Boots");
     }
 
     private void addBlockTranslation() {
@@ -31,10 +38,13 @@ public class ModLanguageProvider extends LanguageProvider {
         add(ModBlocks.HOLMIUM_SAPLING.get(), "Holmium Sapling");
         add(ModBlocks.HOLMIUM_LOG.get(), "Holmium Log");
         add(ModBlocks.HOLMIUM_WOOD.get(), "Holmium Wood");
+        add(ModBlocks.HOLMIUM_PLANKS.get(), "Holmium Planks");
         add(ModBlocks.STRIPPED_HOLMIUM_LOG.get(), "Stripped Holmium Log");
         add(ModBlocks.STRIPPED_HOLMIUM_WOOD.get(), "Stripped Holmium Wood");
         add(ModBlocks.HOLMIUM_GRASS.get(), "Holmium Grass");
+        add(ModBlocks.HOLMIUM_DIRT.get(), "Holmium Dirt");
         add(ModBlocks.URANIUM_ORE.get(), "Uranium Ore");
-        add(ModItems.HOLMIUM_FLUID_BUCKET.get(), "Bucket of Holmium Fluid");
+        add(ModBlocks.HOLMIUM_BROWN_MUSHROOM.get(), "Holmium Brown Mushroom");
+        add(ModBlocks.HOLMIUM_RED_MUSHROOM.get(), "Holmium Red Mushroom");
     }
 }

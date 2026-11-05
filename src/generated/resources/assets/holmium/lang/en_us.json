@@ -1,8 +1,12 @@
 {
   "block.holmium.cobbled_holmium": "Cobbled Holmium",
+  "block.holmium.holmium_brown_mushroom": "Holmium Brown Mushroom",
+  "block.holmium.holmium_dirt": "Holmium Dirt",
   "block.holmium.holmium_grass": "Holmium Grass",
   "block.holmium.holmium_leaves": "Holmium Leaves",
   "block.holmium.holmium_log": "Holmium Log",
+  "block.holmium.holmium_planks": "Holmium Planks",
+  "block.holmium.holmium_red_mushroom": "Holmium Red Mushroom",
   "block.holmium.holmium_sapling": "Holmium Sapling",
   "block.holmium.holmium_stone": "Holmium Stone",
   "block.holmium.holmium_wood": "Holmium Wood",
@@ -10,5 +14,11 @@
   "block.holmium.stripped_holmium_wood": "Stripped Holmium Wood",
   "block.holmium.uranium_ore": "Uranium Ore",
   "item.holmium.holmium_fluid_bucket": "Bucket of Holmium Fluid",
-  "item.holmium.raw_uranium": "Raw Uranium"
+  "item.holmium.item_name": "Femboy Juice",
+  "item.holmium.raw_uranium": "Raw Uranium",
+  "item.holmium.uranium_bar": "Uranium Ingot",
+  "item.holmium.uranium_boots": "Uranium Boots",
+  "item.holmium.uranium_chestplate": "Uranium Chestplate",
+  "item.holmium.uranium_helmet": "Uranium Helmet",
+  "item.holmium.uranium_leggings": "Uranium Leggings"
 }
