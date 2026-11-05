@@ -20,5 +20,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.RAW_URANIUM.get());
         basicItem(ModItems.URANIUM_BAR.get());
         basicItem(ModItems.HOLMIUM_FLUID_BUCKET.get());
+
+        // kieran you gotta add stuff here for armor trims 8:22
     }
 }
