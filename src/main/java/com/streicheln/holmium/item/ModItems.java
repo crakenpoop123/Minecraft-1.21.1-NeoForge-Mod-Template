@@ -1,6 +1,7 @@
 package com.streicheln.holmium.item;
 
 import com.streicheln.holmium.Holmium;
+import com.streicheln.holmium.item.custom.ModArmourItem;
 import com.streicheln.holmium.material.ModFluids;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.ArmorItem;
@@ -24,16 +25,16 @@ public class ModItems {
             () -> new BucketItem(ModFluids.SOURCE_HOLMIUM_FLUID.get(), new Item.Properties()
                     .stacksTo(1).craftRemainder(Items.BUCKET)));
     public static final DeferredItem<ArmorItem> URANIUM_HELMET = ITEMS.register("uranium_helmet",
-            () -> new ArmorItem(ModArmorMaterials.URANIUM_ARMOR_MATERIAL, ArmorItem.Type.HELMET,
+            () -> new ModArmourItem(ModArmorMaterials.URANIUM_ARMOR_MATERIAL, ArmorItem.Type.HELMET,
                     new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(19))));
     public static final DeferredItem<ArmorItem> URANIUM_CHESTPLATE = ITEMS.register("uranium_chestplate",
-            () -> new ArmorItem(ModArmorMaterials.URANIUM_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE,
+            () -> new ModArmourItem(ModArmorMaterials.URANIUM_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE,
                     new Item.Properties().durability(ArmorItem.Type.CHESTPLATE.getDurability(19))));
     public static final DeferredItem<ArmorItem> URANIUM_LEGGINGS = ITEMS.register("uranium_leggings",
-            () -> new ArmorItem(ModArmorMaterials.URANIUM_ARMOR_MATERIAL, ArmorItem.Type.LEGGINGS,
+            () -> new ModArmourItem(ModArmorMaterials.URANIUM_ARMOR_MATERIAL, ArmorItem.Type.LEGGINGS,
                     new Item.Properties().durability(ArmorItem.Type.LEGGINGS.getDurability(19))));
     public static final DeferredItem<ArmorItem> URANIUM_BOOTS = ITEMS.register("uranium_boots",
-            () -> new ArmorItem(ModArmorMaterials.URANIUM_ARMOR_MATERIAL, ArmorItem.Type.BOOTS,
+            () -> new ModArmourItem(ModArmorMaterials.URANIUM_ARMOR_MATERIAL, ArmorItem.Type.BOOTS,
                     new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(19))));
 
 

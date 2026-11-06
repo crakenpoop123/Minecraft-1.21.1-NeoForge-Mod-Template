@@ -36,7 +36,6 @@ public class ModArmorMaterials { // Shift shift ArmorMaterials new.minecraft.wor
     Holder<SoundEvent> equipSound = SoundEvents.ARMOR_EQUIP_DIAMOND;
     Supplier<Ingredient> ingredient = () -> Ingredient.of(ingredientItem.get());
     List<ArmorMaterial.Layer> layers = List.of(new ArmorMaterial.Layer(location));
-
     EnumMap<ArmorItem.Type, Integer> typeMap = new EnumMap<>(ArmorItem.Type.class);
     for (ArmorItem.Type type : ArmorItem.Type.values()) {
         typeMap.put(type, typeProtection.get(type));
