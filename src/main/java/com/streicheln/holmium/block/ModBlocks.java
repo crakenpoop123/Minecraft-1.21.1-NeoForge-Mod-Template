@@ -34,7 +34,7 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)));
     public static final DeferredBlock<Block> CESIUM_BLOCK = registerBlock("cesium_block",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK)));
-    public static final DeferredBlock<Block> CESIUM_ORE = registerBlock("cesium_block",
+    public static final DeferredBlock<Block> CESIUM_ORE = registerBlock("cesium_ore",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_ORE)));
     public static final DeferredBlock<Block> COBBLED_HOLMIUM = registerBlock("cobbled_holmium",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.COBBLESTONE)));

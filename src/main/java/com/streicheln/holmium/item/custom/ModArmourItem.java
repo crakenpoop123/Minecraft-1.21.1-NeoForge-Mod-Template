@@ -29,18 +29,18 @@ public class ModArmourItem extends ArmorItem {
     private static final Map<Holder<ArmorMaterial>, List<MobEffectInstance>> MATERIAL_TO_EFFECT_MAP =
             (new ImmutableMap.Builder<Holder<ArmorMaterial>, List<MobEffectInstance>>())
                     .put(ModArmorMaterials.URANIUM_ARMOR_MATERIAL,
-                            List.of(new MobEffectInstance(MobEffects.GLOWING, 200, 1, false, false),
-                                    new MobEffectInstance(MobEffects.LEVITATION, 200, 1, false, true)
+                            List.of(new MobEffectInstance(MobEffects.GLOWING, 200, 1, false, false)
+//                                    new MobEffectInstance(MobEffects.LEVITATION, 200, 1, false, true)
                             ))
                     .build();
 
-//    private static final Map<Holder<ArmorMaterial>, List<AttributeSupplier.Builder>> MATERIAL_TO_ATTRIBUTE_MAP =
-//            (new ImmutableMap.Builder<Holder<ArmorMaterial>, List<AttributeSupplier.Builder>>())
-//                    .put(ModArmorMaterials.URANIUM_ARMOR_MATERIAL,
-//                            List.of(LivingEntity.createLivingAttributes().add(NeoForgeMod.CREATIVE_FLIGHT, 1)
-//                                    , LivingEntity.createLivingAttributes().add(Attributes.GRAVITY, 1)
-//                            ))
-//                    .build();
+    private static final Map<Holder<ArmorMaterial>, List<AttributeSupplier.Builder>> MATERIAL_TO_ATTRIBUTE_MAP =
+            (new ImmutableMap.Builder<Holder<ArmorMaterial>, List<AttributeSupplier.Builder>>())
+                    .put(ModArmorMaterials.URANIUM_ARMOR_MATERIAL,
+                            List.of(LivingEntity.createLivingAttributes().add(NeoForgeMod.CREATIVE_FLIGHT, 1)
+                                    , LivingEntity.createLivingAttributes().add(Attributes.SCALE, 16)
+                            ))
+                    .build();
 
     public ModArmourItem(Holder<ArmorMaterial> material, Type type, Properties properties) {
         super(material, type, properties);
@@ -48,9 +48,13 @@ public class ModArmourItem extends ArmorItem {
 
     @Override
     public void inventoryTick(ItemStack stack, Level level, Entity entity, int slotId, boolean isSelected) {
-        if(entity instanceof Player player && !level.isClientSide() && hasFullSuitOfArmorOn(player) && slotId == 39) {
-            evaluateArmorEffects(player);
-//            evaluateArmorAttributes(player);
+        if(entity instanceof Player player && !level.isClientSide()) {
+            if (hasFullSuitOfArmorOn(player)) {
+                evaluateArmorEffects(player);
+            }
+            evaluateArmorAttributes(player);
+//                resetAttributesForPlayer(player);
+//            }
         }
     }
 
@@ -65,16 +69,25 @@ public class ModArmourItem extends ArmorItem {
         }
     }
 
-//    private void evaluateArmorAttributes(Player player) {
-//        for(Map.Entry<Holder<ArmorMaterial>, List<AttributeSupplier.Builder>> entry : MATERIAL_TO_ATTRIBUTE_MAP.entrySet()) {
-//            Holder<ArmorMaterial> mapArmorMaterial = entry.getKey();
-//            AttributeSupplier.Builder builder = entry.getValue().getFirst();
-//
-//            if(hasPlayerCorrectArmorOn(mapArmorMaterial, player)) {
-//                addAttributeBuilderToPlayer(player, builder);
-//            }
-//        }
-//    }
+    private void evaluateArmorAttributes(Player player) {
+        // Iterate through each List in the attribute map
+        // This will iterate through the full list of effects for each armour set, alongside the mapArmorMaterial
+        for(Map.Entry<Holder<ArmorMaterial>, List<AttributeSupplier.Builder>> entry : MATERIAL_TO_ATTRIBUTE_MAP.entrySet()) {
+            Holder<ArmorMaterial> mapArmorMaterial = entry.getKey();
+            List<AttributeSupplier.Builder> builderList = entry.getValue();
+
+            // Iterate through each effect within the armor set
+            for(AttributeSupplier.Builder builder : builderList) {
+                if (hasPlayerCorrectArmorOn(mapArmorMaterial, player)) {
+                    addAttributeBuilderToPlayer(player, builder);
+                }
+                else {
+                    resetAttributesForPlayer(player, builder);
+                }
+            }
+
+        }
+    }
 
     private void addAttributeBuilderToPlayer(Player player, AttributeSupplier.Builder builder) {
         Map <Holder<Attribute>, AttributeInstance> attributeMap = ((AttributeSupplierBuilderAccessor) builder).getBuilderMap();
@@ -83,7 +96,52 @@ public class ModArmourItem extends ArmorItem {
             Holder<Attribute> mapAttribute = entry.getKey();
             double value = entry.getValue().getBaseValue();
 
+            System.out.println("Attribute to add (in addAttributeBuilderToPlayer)");
+            System.out.println(mapAttribute);
+            System.out.println(value);
+
             addAttributeToPlayer(player, mapAttribute, value);
+        }
+    }
+    private void resetAttributesForPlayer(Player player, AttributeSupplier.Builder builder) {
+        Map <Holder<Attribute>, AttributeInstance> attributeMap = ((AttributeSupplierBuilderAccessor) builder).getBuilderMap();
+
+        for (Map.Entry<Holder<Attribute>, AttributeInstance> entry : attributeMap.entrySet()) {
+            Holder<Attribute> mapAttribute = entry.getKey();
+            double value = mapAttribute.value().getDefaultValue();
+
+            System.out.println("Attribute to reset (in addAttributeBuilderToPlayer)");
+            System.out.println(mapAttribute);
+            System.out.println(value);
+
+            addAttributeToPlayer(player, mapAttribute, value);
+        }
+    }
+
+    private void addAttributeToPlayer(Player player, Holder<Attribute> customAttribute, double baseValue) {
+        AttributeMap attributeMap = player.getAttributes();
+
+        for (AttributeInstance attribute : attributeMap.getSyncableAttributes()) {
+
+            System.out.println(attribute);
+
+        }
+        if (!attributeMap.hasAttribute(customAttribute)) {
+            AttributeInstance instance = attributeMap.getInstance(customAttribute);
+
+            if (instance != null) {
+                System.out.println("Attribute to add (in addAttributeToPlayer instance != null)");
+                System.out.println(instance);
+                System.out.println(instance.getBaseValue());
+                System.out.println(baseValue);
+                instance.setBaseValue(baseValue);
+            }
+        } else {
+            System.out.println("Attribute to add (in addAttributeToPlayer attributeMap.hasAttribute(customAttribute))");
+            System.out.println(attributeMap.getInstance(customAttribute));
+            System.out.println(attributeMap.getInstance(customAttribute).getBaseValue());
+            System.out.println(baseValue);
+            attributeMap.getInstance(customAttribute).setBaseValue(baseValue);
         }
     }
 
@@ -95,20 +153,6 @@ public class ModArmourItem extends ArmorItem {
                 player.addEffect(new MobEffectInstance(effect.getEffect(),
                         effect.getDuration(), effect.getAmplifier(), effect.isAmbient(), effect.isVisible()));
             }
-        }
-    }
-
-    private void addAttributeToPlayer(Player player, Holder<Attribute> customAttribute, double baseValue) {
-        AttributeMap attributeMap = player.getAttributes();
-
-        if (!attributeMap.hasAttribute(customAttribute)) {
-            AttributeInstance instance = attributeMap.getInstance(customAttribute);
-
-            if (instance != null) {
-                instance.setBaseValue(baseValue);
-            }
-        } else {
-            attributeMap.getInstance(customAttribute).setBaseValue(baseValue);
         }
     }
 

@@ -1,0 +1,8 @@
+{
+  "required": true,
+  "package": "com.streicheln.holmium.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "AttributeSupplierBuilderAccessor"
+  ]
+}
