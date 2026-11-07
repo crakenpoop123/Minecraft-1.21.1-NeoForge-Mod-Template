@@ -32,7 +32,7 @@ public class ModArmourItem extends ArmorItem {
                     .put(ModArmorMaterials.URANIUM_ARMOR_MATERIAL,
                             List.of(
 //                            new MobEffectInstance(MobEffects.GLOWING, 200, 1, false, false),
-                                    new MobEffectInstance(MobEffects.CONFUSION, 200, 1, false, true)
+                                    new MobEffectInstance(MobEffects.CONFUSION, 200, 1, false, false)
                             ))
                     .build();
 

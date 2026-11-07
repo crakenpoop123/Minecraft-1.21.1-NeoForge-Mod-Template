@@ -1,4 +1,6 @@
-// 1.21.1	2026-10-30T13:07:06.4422496	Block States: holmium
+// 1.21.1	2026-11-07T19:28:42.7013322	Block States: holmium
+70a9072544c970cd5b940d7d46f69771323f0866 assets/holmium/blockstates/cesium_block.json
+99bf834b8a2b1f03241aa97e4b35e6229f21895a assets/holmium/blockstates/cesium_ore.json
 5d171226abda246b8c97eaeb92d882badbb48ed3 assets/holmium/blockstates/cobbled_holmium.json
 82c62d2f5fffd06597abe6c2559d3d663dcf6f19 assets/holmium/blockstates/holmium_brown_mushroom.json
 c3db52d9895d05b0aa8255b0c78f45cee0b1c05f assets/holmium/blockstates/holmium_dirt.json
@@ -13,6 +15,8 @@ a0717296fe87b4714fbae0171d26bbe89332e122 assets/holmium/blockstates/holmium_wood
 b1cc6177f3a1433b01bc54d97fd8a368ca72fc8f assets/holmium/blockstates/stripped_holmium_log.json
 965145e745bc0e8abee0b51d707e6d44c6ac6ccd assets/holmium/blockstates/stripped_holmium_wood.json
 51a43eaec39795b0d3014f814dd332ecff3986d4 assets/holmium/blockstates/uranium_ore.json
+4e3dd8d18f32158a1183c35dbd66c1364a76ffff assets/holmium/models/block/cesium_block.json
+8e41aa81353fd1266282fa9e56f08f63758efb53 assets/holmium/models/block/cesium_ore.json
 cb9f2248d434058de88e96772fe6873935313055 assets/holmium/models/block/cobbled_holmium.json
 d622cd7339fc65a9fd60f4dc440d457b70f92033 assets/holmium/models/block/holmium_brown_mushroom.json
 c56294a97495ae2d860634f1c6140f1ae028c43c assets/holmium/models/block/holmium_dirt.json
@@ -31,6 +35,8 @@ bf2059b1ecfef7b65067d2fdde4d2a59b3071818 assets/holmium/models/block/stripped_ho
 2b96749d8b1aa1c5de424d2df53f24718abfdd5c assets/holmium/models/block/stripped_holmium_wood.json
 4ed6f5dc77dd788c3f1fef6dffb2630426513cba assets/holmium/models/block/stripped_holmium_wood_horizontal.json
 24ac2ba3f2f4a4daec3fe4064416b33fa7bc1cec assets/holmium/models/block/uranium_ore.json
+a8fd817dbee91299403e3b248f0ae1dc0fc1a02a assets/holmium/models/item/cesium_block.json
+650024f1a9a601b861f31607e5302035cf1f430b assets/holmium/models/item/cesium_ore.json
 3c19aac86a816c05841d33e848ba2ec0daf8ff73 assets/holmium/models/item/cobbled_holmium.json
 b8dba4a9d7e16f135f982e5fdc89061dc1f34de9 assets/holmium/models/item/holmium_brown_mushroom.json
 73329a3b4efff261ae99df1a33c87faf8ffc5763 assets/holmium/models/item/holmium_dirt.json

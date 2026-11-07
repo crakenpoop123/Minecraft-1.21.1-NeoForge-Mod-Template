@@ -5,8 +5,13 @@ import com.streicheln.holmium.block.ModBlocks;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.Block;
 import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.registries.DeferredBlock;
+import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.function.Supplier;
@@ -20,19 +25,14 @@ public class ModCreativeModeTabs {
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.HOLMIUM_STONE.get()))
                     .title(Component.translatable("creativetab.holmium.holmium_items"))
                     .displayItems((ItemDisplayParameters, output) -> {
-                        output.accept(ModBlocks.HOLMIUM_STONE);
-                        output.accept(ModBlocks.COBBLED_HOLMIUM);
-                        output.accept(ModBlocks.HOLMIUM_LEAVES);
-                        output.accept(ModBlocks.HOLMIUM_LOG);
-                        output.accept(ModBlocks.HOLMIUM_PLANKS);
-                        output.accept(ModBlocks.HOLMIUM_WOOD);
-                        output.accept(ModBlocks.HOLMIUM_SAPLING);
-                        output.accept(ModBlocks.STRIPPED_HOLMIUM_LOG);
-                        output.accept(ModBlocks.STRIPPED_HOLMIUM_WOOD);
-                        output.accept(ModBlocks.URANIUM_ORE);
-                        output.accept(ModItems.RAW_URANIUM);
-                        output.accept(ModItems.URANIUM_BAR);
-                        output.accept(ModItems.HOLMIUM_FLUID_BUCKET);
+                        // Put all Blocks into the Creative Mode Tab by default
+                        for (DeferredHolder<Block, ? extends Block> block : ModBlocks.BLOCKS.getEntries()) {
+                            output.accept(block.get());
+                        }
+                        // Put all Items into the Creative Mode Tab by default
+                        for (DeferredHolder<Item, ? extends Item> item : ModItems.ITEMS.getEntries()) {
+                            output.accept(item.get());
+                        }
 
                     }).build());
 

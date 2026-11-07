@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "holmium:block/cesium_block"
+    }
+  }
+}

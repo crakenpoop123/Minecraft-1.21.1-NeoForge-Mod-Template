@@ -1,9 +1,12 @@
 package com.streicheln.holmium.worldgen;
 
 import com.streicheln.holmium.Holmium;
+import com.streicheln.holmium.block.ModBlocks;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
+import net.minecraft.data.worldgen.placement.PlacementUtils;
+import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
@@ -18,11 +21,18 @@ public class ModPlacedFeatures {
 
     public static final ResourceKey<PlacedFeature> URANIUM_ORE_PLACED_KEY = registerKey("uranium_ore_placed");
 
+    public static final ResourceKey<PlacedFeature> HOLMIUM_TREE_PLACED_KEY = registerKey("holmium_tree_placed");
+
     public static void bootstrap(BootstrapContext<PlacedFeature> context) {
         var configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
 
         register(context, URANIUM_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.OVERWORLD_URANIUM_ORE_KEY),
                 ModOrePlacement.commonOrePlacement(256, HeightRangePlacement.uniform(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(80)))); //15:05 ore placement
+
+        register(context, HOLMIUM_TREE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.HOLMIUM_TREE_KEY),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(3, 0.1f, 2),
+                        ModBlocks.HOLMIUM_SAPLING.get()));
+
     }
 
     public static ResourceKey<PlacedFeature> registerKey(String name) {

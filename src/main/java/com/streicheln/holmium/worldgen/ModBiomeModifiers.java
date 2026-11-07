@@ -16,6 +16,8 @@ import net.neoforged.neoforge.registries.NeoForgeRegistries;
 public class ModBiomeModifiers {
     public static final ResourceKey<BiomeModifier> ADD_URANIUM_ORE = registerKey("add_uranium_ore");
 
+    public static final ResourceKey<BiomeModifier> ADD_HOLMIUM_TREE = registerKey("add_holmium_tree");
+
     public static void bootstrap(BootstrapContext<BiomeModifier> context) {
         var placedFeatures = context.lookup(Registries.PLACED_FEATURE);
         var biomes = context.lookup(Registries.BIOME);
@@ -25,6 +27,11 @@ public class ModBiomeModifiers {
                 HolderSet.direct(biomes.getOrThrow(ModBiomes.HOLMIUM_BIOME)),
                 HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.URANIUM_ORE_PLACED_KEY)),
                 GenerationStep.Decoration.UNDERGROUND_ORES));
+
+        context.register(ADD_HOLMIUM_TREE, new BiomeModifiers.AddFeaturesBiomeModifier(
+                HolderSet.direct(biomes.getOrThrow(ModBiomes.HOLMIUM_BIOME)),
+                HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.HOLMIUM_TREE_PLACED_KEY)),
+                GenerationStep.Decoration.VEGETAL_DECORATION));
     }
 
     private static ResourceKey<BiomeModifier> registerKey(String name) {

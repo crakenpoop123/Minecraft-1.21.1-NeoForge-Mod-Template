@@ -2,12 +2,10 @@ package com.streicheln.holmium.item;
 
 import com.streicheln.holmium.Holmium;
 import com.streicheln.holmium.item.custom.ModArmourItem;
+import com.streicheln.holmium.item.custom.ModLeadItem;
 import com.streicheln.holmium.material.ModFluids;
 import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.ArmorItem;
-import net.minecraft.world.item.BucketItem;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
+import net.minecraft.world.item.*;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -37,7 +35,8 @@ public class ModItems {
             () -> new ModArmourItem(ModArmorMaterials.URANIUM_ARMOR_MATERIAL, ArmorItem.Type.BOOTS,
                     new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(19))));
 
-
+    public static final DeferredItem<LeadItem> HOLMIUM_LEAD = ITEMS.register("holmium_lead",
+            () -> new ModLeadItem(new Item.Properties()));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
