@@ -4,6 +4,7 @@ import com.google.common.collect.ImmutableMap;
 import com.streicheln.holmium.Holmium;
 import com.streicheln.holmium.item.ModArmorMaterials;
 import com.streicheln.holmium.mixin.AttributeSupplierBuilderAccessor;
+import net.minecraft.client.Minecraft;
 import net.minecraft.core.Holder;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -21,6 +22,7 @@ import net.minecraft.world.level.Level;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.common.NeoForgeMod;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -31,8 +33,7 @@ public class ModArmourItem extends ArmorItem {
             (new ImmutableMap.Builder<Holder<ArmorMaterial>, List<MobEffectInstance>>())
                     .put(ModArmorMaterials.URANIUM_ARMOR_MATERIAL,
                             List.of(
-//                            new MobEffectInstance(MobEffects.GLOWING, 200, 1, false, false),
-                                    new MobEffectInstance(MobEffects.CONFUSION, 200, 1, false, false)
+                                    new MobEffectInstance(MobEffects.CONFUSION, 200, 0, false, false)
                             ))
                     .build();
 
@@ -40,7 +41,6 @@ public class ModArmourItem extends ArmorItem {
             (new ImmutableMap.Builder<Holder<ArmorMaterial>, Map<Holder<Attribute>, Float>>())
                     .put(ModArmorMaterials.URANIUM_ARMOR_MATERIAL,
                             Map.of(NeoForgeMod.CREATIVE_FLIGHT, 1.0f
-//                                    Attributes.SCALE, 16.0f
                             ))
                     .build();
 
@@ -124,13 +124,9 @@ public class ModArmourItem extends ArmorItem {
     }
 
     private void addEffectToPlayer(Player player, List<MobEffectInstance> mapEffect) {
-        boolean hasPlayerEffect = mapEffect.stream().allMatch(effect -> player.hasEffect(effect.getEffect()));
-
-        if(!hasPlayerEffect) {
-            for (MobEffectInstance effect : mapEffect) {
-                player.addEffect(new MobEffectInstance(effect.getEffect(),
-                        effect.getDuration(), effect.getAmplifier(), effect.isAmbient(), effect.isVisible()));
-            }
+        for (MobEffectInstance effect : mapEffect) {
+            player.addEffect(new MobEffectInstance(effect.getEffect(),
+                    effect.getDuration(), effect.getAmplifier(), effect.isAmbient(), effect.isVisible()));
         }
     }
 

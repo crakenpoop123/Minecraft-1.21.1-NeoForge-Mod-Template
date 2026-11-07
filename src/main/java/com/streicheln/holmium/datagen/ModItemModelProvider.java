@@ -5,8 +5,10 @@ import com.streicheln.holmium.block.ModBlocks;
 import com.streicheln.holmium.item.ModItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
+import net.neoforged.neoforge.registries.DeferredHolder;
 
 public class ModItemModelProvider extends ItemModelProvider {
     public ModItemModelProvider(PackOutput output, ExistingFileHelper existingFileHelper) {
@@ -20,6 +22,11 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.RAW_URANIUM.get());
         basicItem(ModItems.URANIUM_BAR.get());
         basicItem(ModItems.HOLMIUM_FLUID_BUCKET.get());
+
+        // Give all items a model
+//        for (DeferredHolder<Item, ? extends Item> item : ModItems.ITEMS.getEntries()) {
+//            basicItem(item.get());
+//        }
 
         // kieran you gotta add stuff here for armor trims 8:22
     }
