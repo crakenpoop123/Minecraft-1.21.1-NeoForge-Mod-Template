@@ -38,7 +38,8 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_ORE)));
     public static final DeferredBlock<Block> COBBLED_HOLMIUM = registerBlock("cobbled_holmium",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.COBBLESTONE)));
-
+    public static final DeferredBlock<Block> VOLCANIC_DIRT = registerBlock("volcanic_dirt",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.DIRT)));
     public static final DeferredBlock<Block> HOLMIUM_LOG = registerBlock("holmium_log",
             () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG)));
     public static final DeferredBlock<Block> HOLMIUM_WOOD = registerBlock("holmium_wood",
