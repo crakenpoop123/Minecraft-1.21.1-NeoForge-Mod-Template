@@ -20,6 +20,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.ITEM_NAME.get());
         basicItem(ModBlocks.HOLMIUM_SAPLING.asItem());
         basicItem(ModItems.RAW_URANIUM.get());
+        basicItem(ModItems.CESIUM_INGOT.get());
         basicItem(ModItems.URANIUM_BAR.get());
         basicItem(ModItems.HOLMIUM_FLUID_BUCKET.get());
 
@@ -28,6 +29,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 //            basicItem(item.get());
 //        }
 
-        // kieran you gotta add stuff here for armor trims 8:22
+        // kieran you gotta add stuff here for armor trims 8:22,
+        //hI kIeRaN
     }
 }
