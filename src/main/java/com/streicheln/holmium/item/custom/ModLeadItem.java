@@ -7,6 +7,7 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.Leashable;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -14,6 +15,7 @@ import net.minecraft.world.item.LeadItem;
 import net.minecraft.world.phys.Vec3;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.common.CommonHooks;
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 
 @EventBusSubscriber(modid = Holmium.MODID, bus = EventBusSubscriber.Bus.GAME)
@@ -24,10 +26,12 @@ public class ModLeadItem extends LeadItem {
 
     public float pullStrength = 1.0f;
 
+
+
     @Override
     public InteractionResult interactLivingEntity(ItemStack stack, Player player, LivingEntity target, InteractionHand hand) {
-        System.out.println("Player interacts with Living Entity");
-        System.out.println("Leashable");
+//        System.out.println("Player interacts with Living Entity");
+//        System.out.println("Leashable");
         System.out.println(target instanceof Leashable leashable);
         if (target instanceof Leashable leashable) {
             if (!player.level().isClientSide()) {
@@ -55,6 +59,10 @@ public class ModLeadItem extends LeadItem {
 
     @SubscribeEvent
     public static void onEntityInteract(PlayerInteractEvent.EntityInteract event) {
+        System.out.print("entity is leashable: ");
+        System.out.println(event.getTarget() instanceof Leashable);
+        System.out.print("entity is item: ");
+        System.out.println(event.getTarget() instanceof ItemEntity);
         if (event.getTarget() instanceof Leashable leashable) {
             if (leashable.getLeashHolder() == event.getEntity()) {
                 event.setCanceled(true);

@@ -33,7 +33,7 @@ public class ModArmourItem extends ArmorItem {
             (new ImmutableMap.Builder<Holder<ArmorMaterial>, List<MobEffectInstance>>())
                     .put(ModArmorMaterials.URANIUM_ARMOR_MATERIAL,
                             List.of(
-                                    new MobEffectInstance(MobEffects.CONFUSION, 200, 0, false, false)
+                                    new MobEffectInstance(MobEffects.CONFUSION, 100, 0, false, false)
                             ))
                     .build();
 
