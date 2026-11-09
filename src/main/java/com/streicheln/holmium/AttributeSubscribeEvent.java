@@ -8,8 +8,8 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.common.NeoForgeMod;
 import net.neoforged.neoforge.event.entity.EntityAttributeModificationEvent;
 
-@SuppressWarnings("deprecated")
-@EventBusSubscriber(modid = Holmium.MODID, bus = EventBusSubscriber.Bus.MOD)
+
+@EventBusSubscriber(modid = Holmium.MODID)
 public class AttributeSubscribeEvent {
 
     @SubscribeEvent

@@ -29,6 +29,7 @@ public class ModLanguageProvider extends LanguageProvider {
         add(ModItems.URANIUM_CHESTPLATE.toStack(), "Uranium Chestplate");
         add(ModItems.URANIUM_LEGGINGS.toStack(), "Uranium Leggings");
         add(ModItems.URANIUM_BOOTS.toStack(), "Uranium Boots");
+        add(ModItems.HOLMIUM_LEAD.toStack(), "Holmium Lead");
     }
 
     private void addBlockTranslation() {

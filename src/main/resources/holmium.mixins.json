@@ -3,6 +3,11 @@
   "package": "com.streicheln.holmium.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
-    "AttributeSupplierBuilderAccessor"
-  ]
+    "LeashDataMixin",
+    "EntityMixin"
+  ],
+  "client": [],
+  "injectors": {
+    "defaultRequire": 1
+  }
 }

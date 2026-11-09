@@ -52,7 +52,7 @@ import java.util.function.UnaryOperator;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-@EventBusSubscriber(modid = Holmium.MODID, bus = EventBusSubscriber.Bus.GAME)
+@EventBusSubscriber(modid = Holmium.MODID)
 public class ModCommands {
 
     @SubscribeEvent
