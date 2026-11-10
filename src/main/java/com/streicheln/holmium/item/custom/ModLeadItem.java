@@ -23,7 +23,6 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.common.CommonHooks;
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
-import net.minecraft.world.entity.player.Player;
 
 import java.util.List;
 
@@ -35,19 +34,25 @@ public class ModLeadItem extends LeadItem {
 
     public static float pullStrength = 1.0f;
 
+    @Override
+    public InteractionResult interactLivingEntity(ItemStack stack, Player player, LivingEntity target, InteractionHand hand) {
+        System.out.println("Disabled interactLivingEntity");
+
+        return InteractionResult.FAIL;
+    }
 
     public static void arbitraryEntityInteract(Player player, Level level, PlayerInteractEvent event) {
         ItemStack stack = player.getItemInHand(InteractionHand.MAIN_HAND);
-        if (level.isClientSide) return;
+//        if (level.isClientSide) return;
 
         Vec3 eyePos = player.getEyePosition();
         Vec3 lookVec = player.getLookAngle();
-        Vec3 endPos = eyePos.add(lookVec.scale(4.0)); // Reach distance
+        Vec3 endPos = eyePos.add(lookVec.scale(player.entityInteractionRange())); // Reach distance
 
-        AABB searchBox = player.getBoundingBox().expandTowards(lookVec.scale(4.0)).inflate(0.5);
+        AABB searchBox = player.getBoundingBox().expandTowards(lookVec.scale(player.entityInteractionRange())).inflate(0.5);
         List<Entity> entities = level.getEntities(player, searchBox);
 
-        System.out.print("Right Clicked in onArbitraryEntityInteract: ");
+        System.out.println("Right Clicked in onArbitraryEntityInteract: ");
 
         for (Entity entity : entities) {
             System.out.print("Interacting with entity: ");
@@ -56,53 +61,72 @@ public class ModLeadItem extends LeadItem {
                 if (entity instanceof Leashable leashable) {
                     Leashable.LeashData data = leashable.getLeashData();
                     if ((Object) data instanceof ModLeashData modLeashData) {
+                        System.out.println("Instance of ModLeashData");
                         System.out.println(modLeashData.getLeadType());
+                        System.out.println(data);
                     } else {
                         System.out.println("Not an instance of ModLeashData");
-                        System.out.println(data);
-                    }
-
-                    if (event instanceof ICancellableEvent cancellableEvent) {
-                        cancellableEvent.setCanceled(true);
-                        System.out.println("Canceled event");
                     }
 
                     if (!leashable.isLeashed() && (stack.is(ModItems.HOLMIUM_LEAD) || stack.is(Items.LEAD))) {
                         leashEntity(player, entity, leashable, stack);
-
+                        cancelEvent(event);
                     }
                     else if (leashable.getLeashHolder() == player) {
                         dropLeashCustom(leashable, player);
+                        cancelEvent(event);
                     }
+                    break;
                 }
-                break;
             }
+        }
+    }
+
+    public static void cancelEvent(PlayerInteractEvent event) {
+        if (event instanceof PlayerInteractEvent.EntityInteract entityInteractEvent) {
+            entityInteractEvent.setCanceled(true);
+            entityInteractEvent.setCancellationResult(InteractionResult.SUCCESS);
+            System.out.println("Canceled entityInteractEvent");
+        } else if (event instanceof ICancellableEvent cancellableEvent) {
+            cancellableEvent.setCanceled(true);
+            System.out.println("Canceled ICancellableEvent");
+        } else {
+            System.out.println("Failed to cancel event");
         }
     }
 
     public static void dropLeashCustom(Leashable leashable, Player player) {
         if (!player.level().isClientSide) {
             Leashable.LeashData leashData = leashable.getLeashData();
-            if ((Object) leashData instanceof ModLeashData modLeashData) {
+            if ((Object) leashData instanceof ModLeashData modLeashData && !player.isCreative()) {
+                System.out.println("Dropped a Leash Item");
                 if (modLeashData.getLeadType() == ModLeashData.leadTypeStates.LEAD) {
                     ((Entity) leashable).spawnAtLocation(Items.LEAD);
                 } else {
                     ((Entity) leashable).spawnAtLocation(ModItems.HOLMIUM_LEAD);
                 }
             }
-        }
 
-        System.out.println("Drop Leash");
-        leashable.dropLeash(true, false);
+
+            System.out.println("Disconnected the Leash");
+            leashable.dropLeash(true, false);
+            System.out.println("Leashable new holder is: " +  leashable.getLeashHolder());
+        }
     }
 
     public static InteractionResult leashEntity(Player player, Entity target, Leashable leashable, ItemStack stack){
         if (!player.level().isClientSide()) {
             if (!leashable.isLeashed()) {
-                leashable.setLeashedTo(player, true);
                 ModLeashData.leadTypeStates leadType = stack.is(Items.LEAD) ? ModLeashData.leadTypeStates.LEAD : ModLeashData.leadTypeStates.HOLMIUM_LEAD;
-                stack.shrink(1);
 
+
+                if (leadType == ModLeashData.leadTypeStates.HOLMIUM_LEAD || (target instanceof LivingEntity && leashable.canBeLeashed())) {
+                    leashable.setLeashedTo(player, true);
+                } else {
+                    System.out.println("Can't leash this entity");
+                    return InteractionResult.FAIL;
+                }
+                stack.consume(1, player);
 
                 Leashable.LeashData leashData = leashable.getLeashData();
                 if ((Object) leashData instanceof ModLeashData modLeashData) {
@@ -110,9 +134,7 @@ public class ModLeadItem extends LeadItem {
                     System.out.println(modLeashData.getLeadType());
                     System.out.println(leashData.leashHolder);
                 }
-//                if ((Object) leashData instanceof ModLeashData testLeashData) {
-//                    System.out.println(testLeashData.getLeadType());
-//                }
+
 
 
                 if (leadType == ModLeashData.leadTypeStates.HOLMIUM_LEAD) {
@@ -124,6 +146,7 @@ public class ModLeadItem extends LeadItem {
                     // Pull target to player
                     target.setDeltaMovement(pullVec);
                     target.hurtMarked = true;
+
                 }
 
                 return InteractionResult.sidedSuccess(player.level().isClientSide());
@@ -135,17 +158,23 @@ public class ModLeadItem extends LeadItem {
     // These are used to ensure Entities are counted whenever the player Right Clicks
     @SubscribeEvent
     public static void onRightClickBlock(PlayerInteractEvent.RightClickBlock event) {
-        System.out.println(event);
-        Player player = event.getEntity();
-        Level level = event.getLevel();
-        arbitraryEntityInteract(player, level, event);
+        if (event.getHand() == InteractionHand.MAIN_HAND) {
+            System.out.println(event);
+            Player player = event.getEntity();
+            Level level = event.getLevel();
+            arbitraryEntityInteract(player, level, event);
+//            event.setCanceled(true);
+        }
     }
     @SubscribeEvent
     public static void onRightClickEmpty(PlayerInteractEvent.RightClickEmpty event) {
-        System.out.println(event);
-        Player player = event.getEntity();
-        Level level = event.getLevel();
-        arbitraryEntityInteract(player, level, event);
+        if (event.getHand() == InteractionHand.MAIN_HAND) {
+            System.out.println(event);
+            Player player = event.getEntity();
+            Level level = event.getLevel();
+            arbitraryEntityInteract(player, level, event);
+//            event.setCanceled(true);
+        }
     }
     @SubscribeEvent
     public static void onRightClickLivingEntity(PlayerInteractEvent.EntityInteract event) {
@@ -154,8 +183,16 @@ public class ModLeadItem extends LeadItem {
             Player player = event.getEntity();
             Level level = event.getLevel();
             arbitraryEntityInteract(player, level, event);
+//            event.setCanceled(true);
         }
     }
+    @SubscribeEvent
+    public static void onRightClickLivingEntitySpecific(PlayerInteractEvent.EntityInteractSpecific event) {
+        if (event.getHand() == InteractionHand.MAIN_HAND && event.getTarget() instanceof Leashable) {
+            cancelEvent(event);
+        }
+    }
+
 
 
 

@@ -92,12 +92,6 @@
     "axolotls": [],
     "creature": [
       {
-        "type": "minecraft:warden",
-        "maxCount": 4,
-        "minCount": 4,
-        "weight": 12
-      },
-      {
         "type": "minecraft:pig",
         "maxCount": 4,
         "minCount": 4,
@@ -130,6 +124,12 @@
     ],
     "misc": [],
     "monster": [
+      {
+        "type": "minecraft:warden",
+        "maxCount": 4,
+        "minCount": 4,
+        "weight": 12
+      },
       {
         "type": "minecraft:spider",
         "maxCount": 4,
