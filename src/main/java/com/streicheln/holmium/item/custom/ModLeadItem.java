@@ -36,7 +36,7 @@ public class ModLeadItem extends LeadItem {
 
     @Override
     public InteractionResult interactLivingEntity(ItemStack stack, Player player, LivingEntity target, InteractionHand hand) {
-        System.out.println("Disabled interactLivingEntity");
+        // System.out.println("Disabled interactLivingEntity");
 
         return InteractionResult.FAIL;
     }
@@ -52,20 +52,20 @@ public class ModLeadItem extends LeadItem {
         AABB searchBox = player.getBoundingBox().expandTowards(lookVec.scale(player.entityInteractionRange())).inflate(0.5);
         List<Entity> entities = level.getEntities(player, searchBox);
 
-        System.out.println("Right Clicked in onArbitraryEntityInteract: ");
+        // System.out.println("Right Clicked in onArbitraryEntityInteract: ");
 
         for (Entity entity : entities) {
-            System.out.print("Interacting with entity: ");
-            System.out.println(entity);
+            // System.out.print("Interacting with entity: ");
+            // System.out.println(entity);
             if (entity.getBoundingBox().inflate(0.2).clip(eyePos, endPos).isPresent()) {
                 if (entity instanceof Leashable leashable) {
                     Leashable.LeashData data = leashable.getLeashData();
                     if ((Object) data instanceof ModLeashData modLeashData) {
-                        System.out.println("Instance of ModLeashData");
-                        System.out.println(modLeashData.getLeadType());
-                        System.out.println(data);
+                        // System.out.println("Instance of ModLeashData");
+                        // System.out.println(modLeashData.getLeadType());
+                        // System.out.println(data);
                     } else {
-                        System.out.println("Not an instance of ModLeashData");
+                        // System.out.println("Not an instance of ModLeashData");
                     }
 
                     if (!leashable.isLeashed() && (stack.is(ModItems.HOLMIUM_LEAD) || stack.is(Items.LEAD))) {
@@ -86,12 +86,12 @@ public class ModLeadItem extends LeadItem {
         if (event instanceof PlayerInteractEvent.EntityInteract entityInteractEvent) {
             entityInteractEvent.setCanceled(true);
             entityInteractEvent.setCancellationResult(InteractionResult.SUCCESS);
-            System.out.println("Canceled entityInteractEvent");
+            // System.out.println("Canceled entityInteractEvent");
         } else if (event instanceof ICancellableEvent cancellableEvent) {
             cancellableEvent.setCanceled(true);
-            System.out.println("Canceled ICancellableEvent");
+            // System.out.println("Canceled ICancellableEvent");
         } else {
-            System.out.println("Failed to cancel event");
+            // System.out.println("Failed to cancel event");
         }
     }
 
@@ -99,7 +99,7 @@ public class ModLeadItem extends LeadItem {
         if (!player.level().isClientSide) {
             Leashable.LeashData leashData = leashable.getLeashData();
             if ((Object) leashData instanceof ModLeashData modLeashData && !player.isCreative()) {
-                System.out.println("Dropped a Leash Item");
+                // System.out.println("Dropped a Leash Item");
                 if (modLeashData.getLeadType() == ModLeashData.leadTypeStates.LEAD) {
                     ((Entity) leashable).spawnAtLocation(Items.LEAD);
                 } else {
@@ -108,9 +108,9 @@ public class ModLeadItem extends LeadItem {
             }
 
 
-            System.out.println("Disconnected the Leash");
+            // System.out.println("Disconnected the Leash");
             leashable.dropLeash(true, false);
-            System.out.println("Leashable new holder is: " +  leashable.getLeashHolder());
+            // System.out.println("Leashable new holder is: " +  leashable.getLeashHolder());
         }
     }
 
@@ -123,7 +123,7 @@ public class ModLeadItem extends LeadItem {
                 if (leadType == ModLeashData.leadTypeStates.HOLMIUM_LEAD || (target instanceof LivingEntity && leashable.canBeLeashed())) {
                     leashable.setLeashedTo(player, true);
                 } else {
-                    System.out.println("Can't leash this entity");
+                    // System.out.println("Can't leash this entity");
                     return InteractionResult.FAIL;
                 }
                 stack.consume(1, player);
@@ -131,8 +131,8 @@ public class ModLeadItem extends LeadItem {
                 Leashable.LeashData leashData = leashable.getLeashData();
                 if ((Object) leashData instanceof ModLeashData modLeashData) {
                     modLeashData.setLeadType(leadType);
-                    System.out.println(modLeashData.getLeadType());
-                    System.out.println(leashData.leashHolder);
+                    // System.out.println(modLeashData.getLeadType());
+                    // System.out.println(leashData.leashHolder);
                 }
 
 
@@ -159,7 +159,7 @@ public class ModLeadItem extends LeadItem {
     @SubscribeEvent
     public static void onRightClickBlock(PlayerInteractEvent.RightClickBlock event) {
         if (event.getHand() == InteractionHand.MAIN_HAND) {
-            System.out.println(event);
+            // System.out.println(event);
             Player player = event.getEntity();
             Level level = event.getLevel();
             arbitraryEntityInteract(player, level, event);
@@ -169,7 +169,7 @@ public class ModLeadItem extends LeadItem {
     @SubscribeEvent
     public static void onRightClickEmpty(PlayerInteractEvent.RightClickEmpty event) {
         if (event.getHand() == InteractionHand.MAIN_HAND) {
-            System.out.println(event);
+            // System.out.println(event);
             Player player = event.getEntity();
             Level level = event.getLevel();
             arbitraryEntityInteract(player, level, event);
@@ -179,7 +179,7 @@ public class ModLeadItem extends LeadItem {
     @SubscribeEvent
     public static void onRightClickLivingEntity(PlayerInteractEvent.EntityInteract event) {
         if (event.getHand() == InteractionHand.MAIN_HAND) {
-            System.out.println(event);
+            // System.out.println(event);
             Player player = event.getEntity();
             Level level = event.getLevel();
             arbitraryEntityInteract(player, level, event);
