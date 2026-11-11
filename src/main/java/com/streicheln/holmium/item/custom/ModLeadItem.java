@@ -22,6 +22,7 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.common.CommonHooks;
+import net.neoforged.neoforge.event.entity.player.PlayerEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 
 import java.util.List;
@@ -82,31 +83,17 @@ public class ModLeadItem extends LeadItem {
         }
     }
 
-    public static void cancelEvent(PlayerInteractEvent event) {
-        if (event instanceof PlayerInteractEvent.EntityInteract entityInteractEvent) {
-            entityInteractEvent.setCanceled(true);
-            entityInteractEvent.setCancellationResult(InteractionResult.SUCCESS);
-            // System.out.println("Canceled entityInteractEvent");
-        } else if (event instanceof ICancellableEvent cancellableEvent) {
-            cancellableEvent.setCanceled(true);
-            // System.out.println("Canceled ICancellableEvent");
-        } else {
-            // System.out.println("Failed to cancel event");
-        }
-    }
-
     public static void dropLeashCustom(Leashable leashable, Player player) {
         if (!player.level().isClientSide) {
             Leashable.LeashData leashData = leashable.getLeashData();
             if ((Object) leashData instanceof ModLeashData modLeashData && !player.isCreative()) {
-                // System.out.println("Dropped a Leash Item");
+                 System.out.println("Dropped a Leash Item");
                 if (modLeashData.getLeadType() == ModLeashData.leadTypeStates.LEAD) {
                     ((Entity) leashable).spawnAtLocation(Items.LEAD);
                 } else {
                     ((Entity) leashable).spawnAtLocation(ModItems.HOLMIUM_LEAD);
                 }
             }
-
 
             // System.out.println("Disconnected the Leash");
             leashable.dropLeash(true, false);
@@ -153,6 +140,32 @@ public class ModLeadItem extends LeadItem {
             }
         }
         return InteractionResult.sidedSuccess(player.level().isClientSide());
+    }
+
+    public static void cancelEvent(PlayerInteractEvent event) {
+        if (event instanceof PlayerInteractEvent.EntityInteract entityInteractEvent) {
+            entityInteractEvent.setCanceled(true);
+            entityInteractEvent.setCancellationResult(InteractionResult.SUCCESS);
+            // System.out.println("Canceled entityInteractEvent");
+        } else if (event instanceof ICancellableEvent cancellableEvent) {
+            cancellableEvent.setCanceled(true);
+            // System.out.println("Canceled ICancellableEvent");
+        } else {
+            // System.out.println("Failed to cancel event");
+        }
+    }
+
+    @SubscribeEvent
+    public static void onPlayerLoggedOut (PlayerEvent.PlayerLoggedOutEvent event) {
+        Player player = event.getEntity();
+        if (!player.level().isClientSide) {
+            AABB searchBox = player.getBoundingBox().inflate(32.0);
+            for (Entity entity : player.level().getEntities(player, searchBox)) {
+                if (entity instanceof Leashable leashable && leashable.getLeashHolder() == player) {
+                    dropLeashCustom(leashable, player);
+                }
+            }
+        }
     }
 
     // These are used to ensure Entities are counted whenever the player Right Clicks
