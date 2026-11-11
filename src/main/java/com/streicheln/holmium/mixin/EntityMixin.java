@@ -1,8 +1,11 @@
 package com.streicheln.holmium.mixin;
 
+import com.streicheln.holmium.item.custom.ModLeadItem;
 import com.streicheln.holmium.util.ModLeashData;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.Leashable;
@@ -24,8 +27,15 @@ public abstract class EntityMixin implements Leashable {
     private Leashable.LeashData holmium$leashData;
     private ModLeashData.leadTypeStates holmium$leadState;
 
+
     @Override
     public Leashable.LeashData getLeashData() {return this.holmium$leashData;}
+
+    @Inject(method = "interact", at = @At("TAIL"))
+    public InteractionResult interactLeash(Player player, InteractionHand hand, CallbackInfoReturnable<InteractionResult> ci) {
+        System.out.println("interacted with entity leash");
+        return ci.getReturnValue();
+    }
 
 //    @Inject(method = "setLeashData", at = @At("TAIL"))
     public void setLeashData(@Nullable Leashable.LeashData newLeashData) {

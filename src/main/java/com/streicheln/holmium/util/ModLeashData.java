@@ -7,6 +7,8 @@ public interface ModLeashData {
         HOLMIUM_LEAD
     }
 
+    ThreadLocal<ModLeashData.leadTypeStates> DROP_TYPE = new ThreadLocal<>();
+
     leadTypeStates getLeadType();
     void setLeadType(leadTypeStates state);
 }
