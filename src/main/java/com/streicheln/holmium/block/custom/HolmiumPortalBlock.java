@@ -3,8 +3,10 @@ package com.streicheln.holmium.block.custom;
 import com.google.common.collect.Maps;
 import com.mojang.serialization.MapCodec;
 //import com.streicheln.holmium.block.entity.HolmiumPortalBlockEntity;
+import com.streicheln.holmium.util.HolmiumDimension;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
@@ -28,6 +30,7 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.neoforged.neoforge.client.event.ScreenEvent;
+import net.minecraft.resources.ResourceLocation;
 import org.jetbrains.annotations.Nullable;
 
 public class HolmiumPortalBlock extends Block implements Portal {
@@ -36,6 +39,8 @@ public class HolmiumPortalBlock extends Block implements Portal {
     public static final EnumProperty<Direction.Axis> AXIS = BlockStateProperties.HORIZONTAL_AXIS;
     protected static final VoxelShape X_AXIS_AABB = Block.box(0.0, 0.0, 6.0, 16.0, 16.0, 10.0);
     protected static final VoxelShape Z_AXIS_AABB = Block.box(6.0, 0.0, 0.0, 10.0, 16.0, 16.0);
+
+    private static ResourceKey<Level> cachedOriginDimension;
 
     public HolmiumPortalBlock(Properties properties) {
         super(properties);
@@ -73,31 +78,14 @@ public class HolmiumPortalBlock extends Block implements Portal {
 
     @Override
     public DimensionTransition getPortalDestination(ServerLevel level, Entity entity, BlockPos blockPos) {
-        ResourceKey<Level> resourcekey = level.dimension() == Level.END ? Level.OVERWORLD : Level.END;
-        ServerLevel serverlevel = level.getServer().getLevel(resourcekey);
+        if (cachedOriginDimension == null) cachedOriginDimension = ResourceKey.create(Registries.DIMENSION, ResourceLocation.parse(Level.OVERWORLD.location().toString()));
+        ResourceKey<Level> dimensionDestination = level.dimension().location().equals(HolmiumDimension.HOLMIUM_DIMENSION) ? Level.OVERWORLD : HolmiumDimension.HOLMIUM_DIMENSION_KEY;
+        ServerLevel serverlevel = level.getServer().getLevel(dimensionDestination);
         if (serverlevel == null) {
             return null;
         } else {
-            boolean flag = resourcekey == Level.END;
-            BlockPos blockpos = flag ? ServerLevel.END_SPAWN_POINT : serverlevel.getSharedSpawnPos();
-            Vec3 vec3 = blockpos.getBottomCenter();
-            float f = entity.getYRot();
-            if (flag) {
-                EndPlatformFeature.createEndPlatform(serverlevel, BlockPos.containing(vec3).below(), true);
-                f = Direction.WEST.toYRot();
-                if (entity instanceof ServerPlayer) {
-                    vec3 = vec3.subtract((double)0.0F, (double)1.0F, (double)0.0F);
-                }
-            } else {
-                if (entity instanceof ServerPlayer) {
-                    ServerPlayer serverplayer = (ServerPlayer)entity;
-                    return serverplayer.findRespawnPositionAndUseSpawnBlock(false, DimensionTransition.DO_NOTHING);
-                }
-
-                vec3 = entity.adjustSpawnLocation(serverlevel, blockpos).getBottomCenter();
-            }
-
-            return new DimensionTransition(serverlevel, vec3, entity.getDeltaMovement(), f, entity.getXRot(), DimensionTransition.PLAY_PORTAL_SOUND.then(DimensionTransition.PLACE_PORTAL_TICKET));
+            Vec3 vec3 = entity.position();
+            return new DimensionTransition(serverlevel, vec3, entity.getDeltaMovement(), entity.getYRot(), entity.getXRot(), DimensionTransition.PLAY_PORTAL_SOUND.then(DimensionTransition.PLACE_PORTAL_TICKET));
         }
     }
 }
