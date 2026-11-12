@@ -99,7 +99,7 @@ public class ModBlocks {
 
 
     public static final DeferredBlock<Block> HOLMIUM_PORTAL = registerBlock("holmium_portal",
-            () -> new HolmiumPortalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.END_PORTAL).noOcclusion()));
+            () -> new HolmiumPortalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.NETHER_PORTAL).noOcclusion()));
 
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {

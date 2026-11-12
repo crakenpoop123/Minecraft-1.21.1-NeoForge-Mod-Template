@@ -2,7 +2,7 @@ package com.streicheln.holmium.block.custom;
 
 import com.google.common.collect.Maps;
 import com.mojang.serialization.MapCodec;
-import com.streicheln.holmium.block.entity.HolmiumPortalBlockEntity;
+//import com.streicheln.holmium.block.entity.HolmiumPortalBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceKey;
@@ -17,6 +17,9 @@ import net.minecraft.world.level.block.Portal;
 import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.levelgen.feature.EndPlatformFeature;
 import net.minecraft.world.level.portal.DimensionTransition;
 import net.minecraft.world.phys.Vec3;
@@ -27,40 +30,44 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import net.neoforged.neoforge.client.event.ScreenEvent;
 import org.jetbrains.annotations.Nullable;
 
-public class HolmiumPortalBlock extends BaseEntityBlock implements Portal {
-    public static final VoxelShape SHAPE = Block.box(2, 0, 8, 16, 16, 8);
+public class HolmiumPortalBlock extends Block implements Portal {
     public static final MapCodec<HolmiumPortalBlock> CODEC = simpleCodec(HolmiumPortalBlock::new);
+
+    public static final EnumProperty<Direction.Axis> AXIS = BlockStateProperties.HORIZONTAL_AXIS;
+    protected static final VoxelShape X_AXIS_AABB = Block.box(0.0, 0.0, 6.0, 16.0, 16.0, 10.0);
+    protected static final VoxelShape Z_AXIS_AABB = Block.box(6.0, 0.0, 0.0, 10.0, 16.0, 16.0);
 
     public HolmiumPortalBlock(Properties properties) {
         super(properties);
+        this.registerDefaultState(this.stateDefinition.any().setValue(AXIS, Direction.Axis.X));
     }
 
     @Override
     protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-        return SHAPE;
+        return state.getValue(AXIS) == Direction.Axis.Z ? Z_AXIS_AABB : X_AXIS_AABB;
     }
 
     @Override
-    protected MapCodec<? extends BaseEntityBlock> codec() {
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
+        builder.add(AXIS);
+    }
+
+    @Override
+    protected MapCodec<? extends Block> codec() {
         return CODEC;
     }
 
-    // Block entity stuff:
-
-    @Override
-    protected RenderShape getRenderShape(BlockState state) {
-        return RenderShape.MODEL;
-    }
-
-    @Override
-    public BlockEntity newBlockEntity(BlockPos blockPos, BlockState blockState) {
-        return new HolmiumPortalBlockEntity(blockPos, blockState);
-    }
+//    @Override
+//    public BlockEntity newBlockEntity(BlockPos blockPos, BlockState blockState) {
+//        return new HolmiumPortalBlockEntity(blockPos, blockState);
+//    }
 
     protected void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
         if (entity.canUsePortal(false) && Shapes.joinIsNotEmpty(Shapes.create(entity.getBoundingBox().move((double)(-pos.getX()), (double)(-pos.getY()), (double)(-pos.getZ()))), state.getShape(level, pos), BooleanOp.AND)) {
             entity.setAsInsidePortal(this, pos);
         }
+
+        System.out.println("Entered Portal");
 
     }
 
