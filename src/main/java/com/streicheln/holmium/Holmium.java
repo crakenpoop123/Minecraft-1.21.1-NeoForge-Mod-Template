@@ -1,6 +1,7 @@
 package com.streicheln.holmium;
 
 import com.streicheln.holmium.block.ModBlocks;
+import com.streicheln.holmium.block.entity.ModBlockEntities;
 import com.streicheln.holmium.commands.ModCommands;
 import com.streicheln.holmium.item.ModCreativeModeTabs;
 import com.streicheln.holmium.item.ModItems;
@@ -69,6 +70,8 @@ public class Holmium {
 
         ModFluids.register(modEventBus);
         ModFluidTypes.register(modEventBus);
+
+        ModBlockEntities.register(modEventBus);
 
 
 

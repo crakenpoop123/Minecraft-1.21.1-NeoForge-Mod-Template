@@ -47,5 +47,6 @@ public class ModLanguageProvider extends LanguageProvider {
         add(ModBlocks.URANIUM_ORE.get(), "Uranium Ore");
         add(ModBlocks.HOLMIUM_BROWN_MUSHROOM.get(), "Holmium Brown Mushroom");
         add(ModBlocks.HOLMIUM_RED_MUSHROOM.get(), "Holmium Red Mushroom");
+        add(ModBlocks.HOLMIUM_PORTAL.get(), "Holmium Portal");
     }
 }

@@ -7,6 +7,7 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.storage.loot.BuiltInLootTables;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.neoforged.fml.common.Mod;
@@ -42,12 +43,12 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
 
         ModBlocks.BLOCKS.getEntries().stream()
                 .map(DeferredHolder::get)
+                .filter(block -> block.getLootTable() != BuiltInLootTables.EMPTY)
                 .filter(block -> !this.map.containsKey(block.getLootTable())) // Skip blocks predefined
                 .forEach(this::dropSelf); // Default blocks to dropSelf()
 
     }
 
-    // :3
 
     @Override
     protected Iterable<Block> getKnownBlocks() {

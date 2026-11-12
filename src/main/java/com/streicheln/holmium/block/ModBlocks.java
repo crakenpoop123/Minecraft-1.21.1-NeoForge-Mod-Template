@@ -1,6 +1,7 @@
 package com.streicheln.holmium.block;
 
 import com.streicheln.holmium.Holmium;
+import com.streicheln.holmium.block.custom.HolmiumPortalBlock;
 import com.streicheln.holmium.block.custom.ModFlammableRotatedPillarBlock;
 import com.streicheln.holmium.item.ModItems;
 import com.streicheln.holmium.worldgen.tree.ModTreeGrowers;
@@ -95,6 +96,10 @@ public class ModBlocks {
 
     public static final DeferredBlock<Block> HOLMIUM_SAPLING = registerBlock("holmium_sapling",
             () -> new SaplingBlock(ModTreeGrowers.HOLMIUM, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
+
+
+    public static final DeferredBlock<Block> HOLMIUM_PORTAL = registerBlock("holmium_portal",
+            () -> new HolmiumPortalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.END_PORTAL).noOcclusion()));
 
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
