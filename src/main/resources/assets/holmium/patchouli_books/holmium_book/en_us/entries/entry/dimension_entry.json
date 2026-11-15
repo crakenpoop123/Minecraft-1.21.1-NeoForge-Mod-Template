@@ -1,0 +1,11 @@
+{
+  "name": "How do I get there?",
+  "icon": "holmium:holmium_grass",
+  "category": "holmium:dimension_category",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Die"
+    }
+  ]
+}

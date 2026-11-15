@@ -22,10 +22,10 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.RAW_URANIUM.get());
         basicItem(ModItems.URANIUM_BAR.get());
         basicItem(ModItems.HOLMIUM_FLUID_BUCKET.get());
-//        basicItem(ModItems.URANIUM_HELMET.get());
-//        basicItem(ModItems.URANIUM_CHESTPLATE.get());
-//        basicItem(ModItems.URANIUM_LEGGINGS.get());
-//        basicItem(ModItems.URANIUM_BOOTS.get());
+        basicItem(ModItems.URANIUM_HELMET.get());
+        basicItem(ModItems.URANIUM_CHESTPLATE.get());
+        basicItem(ModItems.URANIUM_LEGGINGS.get());
+        basicItem(ModItems.URANIUM_BOOTS.get());
         basicItem(ModItems.HOLMIUM_LEAD.get());
 //        basicItem(ModBlocks.VOLCANIC_DIRT.asItem());
 //        basicItem(ModBlocks.HOLMIUM_PORTAL.asItem());
