@@ -1,6 +1,6 @@
-// 1.21.1	2026-11-09T11:09:20.4906219	Loot Tables
+// 1.21.1	2026-11-16T11:38:47.4809629	Loot Tables
 379dff667b552dd7f2c9db68bb9a2ba8be9737b2 data/holmium/loot_table/blocks/cesium_block.json
-e9ff7b59daf81f32db9d2b70518563b7d8e3ed5a data/holmium/loot_table/blocks/cesium_ore.json
+d62d5e1a8d723dc3c7c89b295579648256c5e341 data/holmium/loot_table/blocks/cesium_ore.json
 4f8bafa2a1c2c0e1356f09360ff2f55f183282ab data/holmium/loot_table/blocks/cobbled_holmium.json
 620f1564c8d65b2b1c12b8c0c81db15d592a9264 data/holmium/loot_table/blocks/holmium_brown_mushroom.json
 f5e0f4eb560104e06289701df2f8360c155c7852 data/holmium/loot_table/blocks/holmium_dirt.json

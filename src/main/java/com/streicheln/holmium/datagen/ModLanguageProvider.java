@@ -24,6 +24,7 @@ public class ModLanguageProvider extends LanguageProvider {
         add(ModItems.RAW_URANIUM.toStack(), "Raw Uranium");
         add(ModItems.URANIUM_BAR.toStack(), "Uranium Ingot");
         add(ModItems.CESIUM_INGOT.toStack(), "Cesium Ingot");
+        add(ModItems.CESIUM_SWORD.toStack(), "Cesium Sword");
         add(ModItems.ITEM_NAME.toStack(), "Femboy Juice");
         add(ModItems.HOLMIUM_FLUID_BUCKET.toStack(), "Bucket of Holmium Fluid");
         add(ModItems.URANIUM_HELMET.toStack(), "Uranium Helmet");
