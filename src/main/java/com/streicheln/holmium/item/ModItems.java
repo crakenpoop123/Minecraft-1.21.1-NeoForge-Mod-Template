@@ -10,10 +10,23 @@ import net.minecraft.world.item.*;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
+import com.mojang.serialization.Codec;
+import net.minecraft.core.component.DataComponentType;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.network.codec.ByteBufCodecs;
+import net.neoforged.neoforge.registries.DeferredHolder;
 
 public class ModItems {
-    public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(Holmium.MODID);
 
+    public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(Holmium.MODID);
+    public static final DeferredRegister.DataComponents DATA_COMPONENTS =
+            DeferredRegister.createDataComponents(Registries.DATA_COMPONENT_TYPE, "holmium");
+
+    public static final DeferredHolder<DataComponentType<?>, DataComponentType<Boolean>> INITIALIZED =
+            DATA_COMPONENTS.registerComponentType(
+                    "initialized",
+                    builder -> builder.persistent(Codec.BOOL).networkSynchronized(ByteBufCodecs.BOOL)
+            );
     public static final DeferredItem<Item> ITEM_NAME = ITEMS.register("item_name",
             () -> new Item(new Item.Properties())); // example item with no purpose
     public static final DeferredItem<Item> RAW_URANIUM = ITEMS.register("raw_uranium",
@@ -23,8 +36,6 @@ public class ModItems {
     public static final DeferredItem<SwordItem> CESIUM_SWORD = ITEMS.register("cesium_sword",
             () -> new SwordItem(ModToolTiers.CESIUM, new Item.Properties()
                     .attributes (SwordItem.createAttributes(ModToolTiers.CESIUM,100,5f))));
-    public static final DeferredItem<Item> CESIUM_SWORD = ITEMS.register("cesium_sword",
-            () -> new SwordItem(Tiers.IRON, new Item.Properties()));
     public static final DeferredItem<Item> URANIUM_BAR = ITEMS.register("uranium_bar",
             () -> new Item(new Item.Properties()));
 

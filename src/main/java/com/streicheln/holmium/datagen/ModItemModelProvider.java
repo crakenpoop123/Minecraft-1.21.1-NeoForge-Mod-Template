@@ -23,8 +23,8 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         basicItem(ModItems.CESIUM_INGOT.get());
         handheldItem(ModItems.CESIUM_SWORD.get());
-//        basicItem(ModItems.CESIUM_INGOT.get());
-//        basicItem(ModItems.CESIUM_SWORD.get());
+        basicItem(ModItems.CESIUM_INGOT.get());
+        basicItem(ModItems.CESIUM_SWORD.get());
 
         basicItem(ModItems.URANIUM_BAR.get());
         basicItem(ModItems.HOLMIUM_FLUID_BUCKET.get());

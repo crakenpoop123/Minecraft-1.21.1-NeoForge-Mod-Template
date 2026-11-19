@@ -16,7 +16,6 @@ import java.awt.*;
 public class ModTags {
     public static class Blocks {
         public static final TagKey<Block> NEEDS_CESIUM_TOOL = createTag("needs_cesium_tool");
-        public static final TagKey<Block> NEEDS_CESIUM_TOOL = createTag("needs_cesium");
         public static final TagKey<Block> INCORRECT_FOR_CESIUM_TOOL = createTag("incorrect_for_cesium_tool");
 
         public static final TagKey<Block> HOLMIUM_STONE_REPLACEABLES = createTag("holmium_stone_replaceables");
