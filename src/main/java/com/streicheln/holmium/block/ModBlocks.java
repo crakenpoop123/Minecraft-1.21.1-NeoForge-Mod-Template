@@ -1,5 +1,6 @@
 package com.streicheln.holmium.block;
 
+import com.mojang.serialization.MapCodec;
 import com.streicheln.holmium.Holmium;
 import com.streicheln.holmium.block.custom.HolmiumPortalBlock;
 import com.streicheln.holmium.block.custom.ModFlammableRotatedPillarBlock;
@@ -59,6 +60,13 @@ public class ModBlocks {
             () -> new GrassBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GRASS_BLOCK)));
     public static final DeferredBlock<Block> HOLMIUM_DIRT = registerBlock("holmium_dirt",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.DIRT)));
+    public static final DeferredBlock<Block> HOLMIUM_SAND = registerBlock("holmium_sand",
+            () -> new FallingBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.SAND)) {
+                @Override
+                protected MapCodec<? extends FallingBlock> codec() {
+                    return null;
+                }
+            });
 
 
 

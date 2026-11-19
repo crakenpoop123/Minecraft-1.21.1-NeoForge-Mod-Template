@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "holmium:item_name"
+    },
+    "X": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "XBX",
+    "BXB",
+    "XBX"
+  ],
+  "result": {
+    "count": 1,
+    "id": "holmium:holmium_stone"
+  }
+}
