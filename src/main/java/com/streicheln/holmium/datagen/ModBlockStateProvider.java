@@ -46,6 +46,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockItem(ModBlocks.HOLMIUM_RED_MUSHROOM);
 
         blockWithItem(ModBlocks.HOLMIUM_DIRT);
+        blockWithItem(ModBlocks.HOLMIUM_SAND);
+
 
         models().cubeBottomTop("holmium_grass",
                 ResourceLocation.parse("holmium:block/holmium_grass"),
