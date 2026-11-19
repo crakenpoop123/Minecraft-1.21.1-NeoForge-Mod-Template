@@ -9,6 +9,7 @@ import com.streicheln.holmium.loot.ModLootModifiers;
 import com.streicheln.holmium.material.ModFluidTypes;
 import com.streicheln.holmium.material.ModFluids;
 import com.streicheln.holmium.worldgen.ModBiomes;
+import com.streicheln.holmium.worldgen.ModFeature;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.entity.EntityType;
@@ -74,6 +75,7 @@ public class Holmium {
 
         ModBlockEntities.register(modEventBus);
         ModLootModifiers.register(modEventBus);
+        ModFeature.register(modEventBus);
 
 
         // Register ourselves for server and other game events we are interested in.
