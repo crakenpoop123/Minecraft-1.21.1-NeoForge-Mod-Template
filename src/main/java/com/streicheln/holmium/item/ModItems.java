@@ -20,7 +20,7 @@ public class ModItems {
     public static final DeferredItem<Item> CESIUM_INGOT = ITEMS.register("cesium_ingot",
             () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> CESIUM_SWORD = ITEMS.register("cesium_sword",
-            () -> new SwordItem(new Item.Properties()));
+            () -> new SwordItem(Tiers.IRON, new Item.Properties()));
     public static final DeferredItem<Item> URANIUM_BAR = ITEMS.register("uranium_bar",
             () -> new Item(new Item.Properties()));
 

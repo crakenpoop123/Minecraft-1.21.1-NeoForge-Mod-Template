@@ -1,6 +1,6 @@
 package com.streicheln.holmium.util;
 
-import com.jcraft.jorbis.Block;
+import net.minecraft.world.level.block.Block;
 import com.streicheln.holmium.Holmium;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
@@ -15,8 +15,8 @@ import java.awt.*;
 
 public class ModTags {
     public static class Blocks {
-        public static final TagKey<Block> NEEDS_CESIUM_TOOL = createTag("needs_cesium")
-        public static final TagKey<Block> INCORRECT_FOR_CESIUM_TOOL = createTag("incorrect_for_cesium_tool")
+        public static final TagKey<Block> NEEDS_CESIUM_TOOL = createTag("needs_cesium");
+        public static final TagKey<Block> INCORRECT_FOR_CESIUM_TOOL = createTag("incorrect_for_cesium_tool");
 
         public static final TagKey<Block> HOLMIUM_STONE_REPLACEABLES = createTag("holmium_stone_replaceables");
 
