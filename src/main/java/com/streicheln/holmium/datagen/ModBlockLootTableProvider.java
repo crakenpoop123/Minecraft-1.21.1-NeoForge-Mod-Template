@@ -39,7 +39,10 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
                 block -> createSilkTouchDispatchTable(ModBlocks.URANIUM_ORE.get(),
                         applyExplosionDecay(ModBlocks.URANIUM_ORE.get(),
                                 LootItem.lootTableItem(ModItems.RAW_URANIUM.get()))));
-
+        add(ModBlocks.CESIUM_ORE.get(),
+                block -> createSilkTouchDispatchTable(ModBlocks.CESIUM_ORE.get(),
+                        applyExplosionDecay(ModBlocks.CESIUM_ORE.get(),
+                                LootItem.lootTableItem(ModItems.CESIUM_INGOT.get()))));
 
         ModBlocks.BLOCKS.getEntries().stream()
                 .map(DeferredHolder::get)

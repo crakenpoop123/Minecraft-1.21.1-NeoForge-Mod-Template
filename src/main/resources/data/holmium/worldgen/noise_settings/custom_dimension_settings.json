@@ -28,7 +28,12 @@
     },
     "continents": "minecraft:overworld/continents",
     "depth": "minecraft:overworld/depth",
-    "erosion": "minecraft:overworld/erosion",
+    "erosion": {
+      "type": "minecraft:cache_2d",
+      "argument": {
+        "type": "minecraft:end_islands"
+      }
+    },
     "final_density": {
       "type": "minecraft:min",
       "argument1": {

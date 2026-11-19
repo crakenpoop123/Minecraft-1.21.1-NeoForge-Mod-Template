@@ -17,8 +17,13 @@ public class ModItems {
             () -> new Item(new Item.Properties())); // example item with no purpose
     public static final DeferredItem<Item> RAW_URANIUM = ITEMS.register("raw_uranium",
             () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> CESIUM_INGOT = ITEMS.register("cesium_ingot",
+            () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> CESIUM_SWORD = ITEMS.register("cesium_sword",
+            () -> new SwordItem(new Item.Properties()));
     public static final DeferredItem<Item> URANIUM_BAR = ITEMS.register("uranium_bar",
             () -> new Item(new Item.Properties()));
+
     public static final DeferredItem<Item> HOLMIUM_FLUID_BUCKET = ITEMS.register("holmium_fluid_bucket",
             () -> new BucketItem(ModFluids.SOURCE_HOLMIUM_FLUID.get(), new Item.Properties()
                     .stacksTo(1).craftRemainder(Items.BUCKET)));
