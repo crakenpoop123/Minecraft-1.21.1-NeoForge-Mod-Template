@@ -3,6 +3,7 @@ package com.streicheln.holmium.item;
 import com.streicheln.holmium.Holmium;
 import com.streicheln.holmium.item.custom.ModArmourItem;
 import com.streicheln.holmium.item.custom.ModLeadItem;
+import com.streicheln.holmium.item.custom.ModToolTiers;
 import com.streicheln.holmium.material.ModFluids;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
@@ -19,6 +20,9 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> CESIUM_INGOT = ITEMS.register("cesium_ingot",
             () -> new Item(new Item.Properties()));
+    public static final DeferredItem<SwordItem> CESIUM_SWORD = ITEMS.register("cesium_sword",
+            () -> new SwordItem(ModToolTiers.CESIUM, new Item.Properties()
+                    .attributes (SwordItem.createAttributes(ModToolTiers.CESIUM,100,5f))));
     public static final DeferredItem<Item> CESIUM_SWORD = ITEMS.register("cesium_sword",
             () -> new SwordItem(Tiers.IRON, new Item.Properties()));
     public static final DeferredItem<Item> URANIUM_BAR = ITEMS.register("uranium_bar",

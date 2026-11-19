@@ -20,8 +20,12 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.ITEM_NAME.get());
         basicItem(ModBlocks.HOLMIUM_SAPLING.asItem());
         basicItem(ModItems.RAW_URANIUM.get());
+
+        basicItem(ModItems.CESIUM_INGOT.get());
+        handheldItem(ModItems.CESIUM_SWORD.get());
 //        basicItem(ModItems.CESIUM_INGOT.get());
 //        basicItem(ModItems.CESIUM_SWORD.get());
+
         basicItem(ModItems.URANIUM_BAR.get());
         basicItem(ModItems.HOLMIUM_FLUID_BUCKET.get());
         basicItem(ModItems.URANIUM_HELMET.get());
@@ -35,8 +39,5 @@ public class ModItemModelProvider extends ItemModelProvider {
 
 
         // Give all items a model
-//        for (DeferredHolder<Item, ? extends Item> item : ModItems.ITEMS.getEntries()) {
-//            basicItem(item.get());
-//        }
     }
 }
