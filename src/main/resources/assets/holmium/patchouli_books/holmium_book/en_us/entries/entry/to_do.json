@@ -1,0 +1,11 @@
+{
+  "name": "What can I do here?",
+  "icon": "holmium:holmium_grass",
+  "category": "holmium:dimension_category",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "In the Holmium dimension you can find new ores that let you make new armour and tools!"
+    }
+  ]
+}
