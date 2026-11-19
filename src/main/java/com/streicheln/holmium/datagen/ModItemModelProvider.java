@@ -21,7 +21,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModBlocks.HOLMIUM_SAPLING.asItem());
         basicItem(ModItems.RAW_URANIUM.get());
         basicItem(ModItems.CESIUM_INGOT.get());
-        basicItem(ModItems.CESIUM_SWORD.get());
+        handheldItem(ModItems.CESIUM_SWORD.get());
         basicItem(ModItems.URANIUM_BAR.get());
         basicItem(ModItems.HOLMIUM_FLUID_BUCKET.get());
         basicItem(ModItems.URANIUM_HELMET.get());
@@ -38,12 +38,5 @@ public class ModItemModelProvider extends ItemModelProvider {
 //        for (DeferredHolder<Item, ? extends Item> item : ModItems.ITEMS.getEntries()) {
 //            basicItem(item.get());
 //        }
-
-<<<<<<< HEAD
-        // kieran you gotta add stuff here for armor trims 8:22,
-        //hI kIeRaN
-=======
-        // Kieran you gotta add stuff here for armor trims 8:22
->>>>>>> fa082af29aa79a15a71f3339fe669a1aaf5e89eb
     }
 }

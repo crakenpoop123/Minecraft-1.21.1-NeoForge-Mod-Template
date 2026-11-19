@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-// 1.21.1	2026-11-16T11:38:47.4809629	Loot Tables
-=======
-// 1.21.1	2026-11-13T09:27:42.3325682	Loot Tables
->>>>>>> fa082af29aa79a15a71f3339fe669a1aaf5e89eb
+// 1.21.1	2026-11-19T14:45:02.6876101	Loot Tables
 379dff667b552dd7f2c9db68bb9a2ba8be9737b2 data/holmium/loot_table/blocks/cesium_block.json
 d62d5e1a8d723dc3c7c89b295579648256c5e341 data/holmium/loot_table/blocks/cesium_ore.json
 4f8bafa2a1c2c0e1356f09360ff2f55f183282ab data/holmium/loot_table/blocks/cobbled_holmium.json
