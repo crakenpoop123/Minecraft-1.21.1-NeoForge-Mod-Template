@@ -7,6 +7,7 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 import net.neoforged.neoforge.common.Tags;
@@ -28,12 +29,13 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 //                ModItems.ITEM_NAME
 //                );
 //
-//        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.HOLMIUM_STONE.get()) // SHAPED RECIPE TEMPLATE
-//                .pattern("BBB")
-//                .pattern("BBB")
-//                .pattern("BBB")
-//                .define('B', ModItems.ITEM_NAME.get())
-//                .unlockedBy("has_item", has(ModItems.ITEM_NAME)).save(recipeOutput, "holmium:holmium_stone_from_example_item"); // give it a unique name
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.HOLMIUM_STONE.get()) // SHAPED RECIPE TEMPLATE
+                .pattern("BBB")
+                .pattern("BXB")
+                .pattern("BBB")
+                .define('B', ModItems.ITEM_NAME.get())
+                .define('X', Items.STICK)
+                .unlockedBy("has_item", has(ModItems.ITEM_NAME)).save(recipeOutput, "holmium:holmium_stone_from_example_item"); // give it a unique name
 //
 //        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.ITEM_NAME.get(), 9) // SHAPELESS RECIPE TEMPLATE
 //                .requires(ModBlocks.HOLMIUM_STONE)

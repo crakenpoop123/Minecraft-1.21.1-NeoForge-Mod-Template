@@ -31,6 +31,33 @@
               1
             ]
           }
+        },
+        {
+          "biome": "holmium:holmium_beach",
+          "parameters": {
+            "continentalness": [
+              -0.19,
+              -0.11
+            ],
+            "depth": 0.0,
+            "erosion": [
+              -1.0,
+              -1
+            ],
+            "humidity": [
+              -1.0,
+              -0.35
+            ],
+            "offset": 0.0,
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "weirdness": [
+              -1,
+              1
+            ]
+          }
         }
       ],
       "type": "minecraft:multi_noise"
