@@ -24,13 +24,26 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.CESIUM_SWORD.get());
         basicItem(ModItems.URANIUM_BAR.get());
         basicItem(ModItems.HOLMIUM_FLUID_BUCKET.get());
+//        basicItem(ModItems.URANIUM_HELMET.get());
+//        basicItem(ModItems.URANIUM_CHESTPLATE.get());
+//        basicItem(ModItems.URANIUM_LEGGINGS.get());
+//        basicItem(ModItems.URANIUM_BOOTS.get());
+        basicItem(ModItems.HOLMIUM_LEAD.get());
+//        basicItem(ModBlocks.VOLCANIC_DIRT.asItem());
+//        basicItem(ModBlocks.HOLMIUM_PORTAL.asItem());
+
+
 
         // Give all items a model
 //        for (DeferredHolder<Item, ? extends Item> item : ModItems.ITEMS.getEntries()) {
 //            basicItem(item.get());
 //        }
 
+<<<<<<< HEAD
         // kieran you gotta add stuff here for armor trims 8:22,
         //hI kIeRaN
+=======
+        // Kieran you gotta add stuff here for armor trims 8:22
+>>>>>>> fa082af29aa79a15a71f3339fe669a1aaf5e89eb
     }
 }

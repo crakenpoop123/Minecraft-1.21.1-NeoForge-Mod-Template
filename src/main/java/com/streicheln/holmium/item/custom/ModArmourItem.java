@@ -1,16 +1,12 @@
 package com.streicheln.holmium.item.custom;
 
 import com.google.common.collect.ImmutableMap;
-import com.streicheln.holmium.Holmium;
 import com.streicheln.holmium.item.ModArmorMaterials;
-import com.streicheln.holmium.mixin.AttributeSupplierBuilderAccessor;
-import net.minecraft.client.Minecraft;
 import net.minecraft.core.Holder;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeInstance;
 import net.minecraft.world.entity.ai.attributes.AttributeMap;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
@@ -19,21 +15,17 @@ import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.common.NeoForgeMod;
 
-import java.util.Collection;
 import java.util.List;
 import java.util.Map;
-import net.minecraft.world.entity.ai.attributes.Attributes;
-import org.w3c.dom.Attr;
 
 public class ModArmourItem extends ArmorItem {
     private static final Map<Holder<ArmorMaterial>, List<MobEffectInstance>> MATERIAL_TO_EFFECT_MAP =
             (new ImmutableMap.Builder<Holder<ArmorMaterial>, List<MobEffectInstance>>())
                     .put(ModArmorMaterials.URANIUM_ARMOR_MATERIAL,
                             List.of(
-                                    new MobEffectInstance(MobEffects.CONFUSION, 200, 0, false, false)
+                                    new MobEffectInstance(MobEffects.CONFUSION, 100, 0, false, false)
                             ))
                     .build();
 
@@ -91,17 +83,6 @@ public class ModArmourItem extends ArmorItem {
         }
     }
 
-    private void addAttributeBuilderToPlayer(Player player, AttributeSupplier.Builder builder) {
-        Map <Holder<Attribute>, AttributeInstance> attributeMap = ((AttributeSupplierBuilderAccessor) builder).getBuilderMap();
-
-        for (Map.Entry<Holder<Attribute>, AttributeInstance> entry : attributeMap.entrySet()) {
-            Holder<Attribute> mapAttribute = entry.getKey();
-            double value = entry.getValue().getBaseValue();
-
-
-            addAttributeToPlayer(player, mapAttribute, value);
-        }
-    }
     private void resetAttributeForPlayer(Player player, Holder<Attribute> attribute) {
         double value = attribute.value().getDefaultValue();
 

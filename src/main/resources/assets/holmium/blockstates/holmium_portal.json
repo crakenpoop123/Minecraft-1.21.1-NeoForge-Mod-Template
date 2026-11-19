@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "holmium:block/holmium_portal"
+    },
+    "facing=east": {
+      "model": "holmium:block/holmium_portal",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "holmium:block/holmium_portal",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "holmium:block/holmium_portal",
+      "y": 270
+    }
+  }
+}

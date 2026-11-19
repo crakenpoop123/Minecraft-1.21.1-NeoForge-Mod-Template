@@ -17,8 +17,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
-@SuppressWarnings("deprecated")
-@EventBusSubscriber(modid = Holmium.MODID, bus = EventBusSubscriber.Bus.MOD) // Just ignore the warnings, it's fine
+@EventBusSubscriber(modid = Holmium.MODID)
 public class DataGenerators {
 
     @SubscribeEvent
