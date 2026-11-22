@@ -29,6 +29,7 @@ import java.util.List;
 public class ModConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_URANIUM_ORE_KEY = registerKey("uranium_ore");
 
+    public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_CESIUM_ORE_KEY = registerKey("cesium_ore");
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> HOLMIUM_TREE_KEY = registerKey("holmium_tree");
 
@@ -38,12 +39,19 @@ public class ModConfiguredFeatures {
         RuleTest holmiumStoneReplaceables = new TagMatchTest(ModTags.Blocks.HOLMIUM_STONE_REPLACEABLES); // Replace certain tags
         RuleTest netherrackReplaceables = new BlockMatchTest(Blocks.NETHERRACK); // Replace individual blocks
         RuleTest endReplaceables = new BlockMatchTest(Blocks.END_STONE);
-
+        RuleTest StoneReplaceables = new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES);
 
         List<OreConfiguration.TargetBlockState>  overworldUraniumOre = List.of(
                 OreConfiguration.target(holmiumStoneReplaceables, ModBlocks.URANIUM_ORE.get().defaultBlockState()));
 
         register(context, OVERWORLD_URANIUM_ORE_KEY, Feature.ORE, new OreConfiguration(overworldUraniumOre, 9)); // Ctrl left click ore to see it all
+
+        List<OreConfiguration.TargetBlockState>  overworldCesiumOre = List.of(
+                OreConfiguration.target(holmiumStoneReplaceables, ModBlocks.CESIUM_ORE.get().defaultBlockState()));
+
+        register(context, OVERWORLD_CESIUM_ORE_KEY, Feature.ORE, new OreConfiguration(overworldCesiumOre, 1)); // Ctrl left click ore to see it all
+
+
 
         register(context, HOLMIUM_TREE_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
                 BlockStateProvider.simple(ModBlocks.HOLMIUM_LOG.get()), // What block the trunk is

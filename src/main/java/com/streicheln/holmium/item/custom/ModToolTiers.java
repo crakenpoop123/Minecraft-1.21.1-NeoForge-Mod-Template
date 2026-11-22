@@ -9,5 +9,5 @@ import net.neoforged.neoforge.common.SimpleTier;
 
 public class ModToolTiers {
     public static final Tier CESIUM = new SimpleTier(ModTags.Blocks.INCORRECT_FOR_CESIUM_TOOL,
-            5, 5f, 100f, 0, () -> Ingredient.of(ModItems.CESIUM_INGOT.get()));
+            3, 5f, 100f, 0, () -> Ingredient.of(ModItems.CESIUM_INGOT.get()));
 }

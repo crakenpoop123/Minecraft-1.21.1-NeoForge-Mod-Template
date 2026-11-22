@@ -30,12 +30,32 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 //                );
 //
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.HOLMIUM_STONE.get()) // SHAPED RECIPE TEMPLATE
-                .pattern("BBB")
-                .pattern("BXB")
-                .pattern("BBB")
-                .define('B', ModItems.ITEM_NAME.get())
-                .define('X', Items.STICK)
-                .unlockedBy("has_item", has(ModItems.ITEM_NAME)).save(recipeOutput, "holmium:holmium_stone_from_example_item"); // give it a unique name
+                .pattern("U U")
+                .pattern("UUU")
+                .pattern("UUU")
+                .define('U', ModItems.URANIUM_BAR)
+                .unlockedBy("has_item", has(ModItems.URANIUM_BAR)).save(recipeOutput, "holmium:uranium_chest");
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.HOLMIUM_STONE.get()) // SHAPED RECIPE TEMPLATE
+                .pattern("UUU")
+                .pattern("U U")
+                .define('U', ModItems.URANIUM_BAR)
+                .unlockedBy("has_item", has(ModItems.URANIUM_BAR)).save(recipeOutput, "holmium:uranium_helm");
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.HOLMIUM_STONE.get()) // SHAPED RECIPE TEMPLATE
+                .pattern("UUU")
+                .pattern("U U")
+                .pattern("U U")
+                .define('U', ModItems.URANIUM_BAR)
+                .unlockedBy("has_item", has(ModItems.URANIUM_BAR)).save(recipeOutput, "holmium:uranium_leg");
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.HOLMIUM_STONE.get()) // SHAPED RECIPE TEMPLATE
+                .pattern("U U")
+                .pattern("U U")
+                .define('U', ModItems.URANIUM_BAR)
+                .unlockedBy("has_item", has(ModItems.URANIUM_BAR)).save(recipeOutput, "holmium:uranium_boot");
+
+
 //
 //        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.ITEM_NAME.get(), 9) // SHAPELESS RECIPE TEMPLATE
 //                .requires(ModBlocks.HOLMIUM_STONE)
@@ -43,6 +63,14 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 //
 //        oreSmelting(recipeOutput, HOLMIUM_SMELTABLES, RecipeCategory.MISC, ModBlocks.HOLMIUM_STONE.get(), 10f, 200, "holmium"); // SMELTING EXAMPLES
 //        oreBlasting(recipeOutput, HOLMIUM_SMELTABLES, RecipeCategory.MISC, ModBlocks.HOLMIUM_STONE.get(), 20f, 100, "holmium");
+
+        List<ItemLike> HOLMIUM_SMELTABLES = List.of( // THIS IS CONFUSING ASK ME WHEN YOU NEED TO ADD SOMETHING SMELTED
+                ModItems.RAW_URANIUM
+                );
+
+        oreSmelting(recipeOutput, HOLMIUM_SMELTABLES, RecipeCategory.MISC, ModItems.URANIUM_BAR.get(), 10f, 200, "uranium"); // SMELTING EXAMPLES
+        oreBlasting(recipeOutput, HOLMIUM_SMELTABLES, RecipeCategory.MISC, ModItems.URANIUM_BAR.get(), 20f, 100, "uranium");
+
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModBlocks.HOLMIUM_PLANKS.get(), 4)
                 .requires(Ingredient.of(ModTags.Items.HOLMIUM_LOGS))

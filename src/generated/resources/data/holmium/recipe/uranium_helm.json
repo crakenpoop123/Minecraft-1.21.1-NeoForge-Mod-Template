@@ -2,17 +2,13 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "B": {
-      "item": "holmium:item_name"
-    },
-    "X": {
-      "item": "minecraft:stick"
+    "U": {
+      "item": "holmium:uranium_bar"
     }
   },
   "pattern": [
-    "XBX",
-    "BXB",
-    "XBX"
+    "UUU",
+    "U U"
   ],
   "result": {
     "count": 1,

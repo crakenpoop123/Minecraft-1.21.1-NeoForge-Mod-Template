@@ -18,6 +18,8 @@ public class ModBiomeModifiers {
 
     public static final ResourceKey<BiomeModifier> ADD_HOLMIUM_TREE = registerKey("add_holmium_tree");
 
+    public static final ResourceKey<BiomeModifier> ADD_CESIUM_ORE = registerKey("add_cesium_tree");
+
     public static void bootstrap(BootstrapContext<BiomeModifier> context) {
         var placedFeatures = context.lookup(Registries.PLACED_FEATURE);
         var biomes = context.lookup(Registries.BIOME);
@@ -32,6 +34,13 @@ public class ModBiomeModifiers {
                 HolderSet.direct(biomes.getOrThrow(ModBiomes.HOLMIUM_BIOME)),
                 HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.HOLMIUM_TREE_PLACED_KEY)),
                 GenerationStep.Decoration.VEGETAL_DECORATION));
+
+        context.register(ADD_CESIUM_ORE, new BiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
+                HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.CESIUM_ORE_PLACED_KEY)),
+                GenerationStep.Decoration.UNDERGROUND_ORES));
+
+
     }
 
     private static ResourceKey<BiomeModifier> registerKey(String name) {

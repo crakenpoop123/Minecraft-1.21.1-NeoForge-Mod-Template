@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "U": {
+      "item": "holmium:uranium_bar"
+    }
+  },
+  "pattern": [
+    "UUU",
+    "U U",
+    "U U"
+  ],
+  "result": {
+    "count": 1,
+    "id": "holmium:holmium_stone"
+  }
+}

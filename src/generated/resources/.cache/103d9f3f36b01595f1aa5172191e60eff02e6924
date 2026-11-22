@@ -1,7 +1,10 @@
-// 1.21.1	2026-11-07T19:28:42.7093372	Registries
+// 1.21.1	2026-11-23T11:46:43.2161484	Registries
+f564e9373b28dfee032e04a4988813ca102aaec1 data/holmium/neoforge/biome_modifier/add_cesium_tree.json
 290ec5a12877b62c9e95f271eea3208e6afef0aa data/holmium/neoforge/biome_modifier/add_holmium_tree.json
 5891ab98a635b79f4cdae68ceabcb5c5d8bc8c6a data/holmium/neoforge/biome_modifier/add_uranium_ore.json
+53935a803e68bb32995207f393f7b24e712222cb data/holmium/worldgen/configured_feature/cesium_ore.json
 4a7ef885f82ba421aaf73f58842893fcdcd5627c data/holmium/worldgen/configured_feature/holmium_tree.json
 5388f540633715982ff535d0f947690816b99f7f data/holmium/worldgen/configured_feature/uranium_ore.json
+f21706ab180c42e3523a8f57b423cb32a6d8b57c data/holmium/worldgen/placed_feature/cesium_ore_placed.json
 8b70f6aac58e226173b61451483bb407a0e79a63 data/holmium/worldgen/placed_feature/holmium_tree_placed.json
 546aa3da91e7bbbf862367050cd33ae5b2dc7fe6 data/holmium/worldgen/placed_feature/uranium_ore_placed.json
