@@ -1,11 +1,11 @@
 {
-  "name": "Ceasium sword",
+  "name": "Cesium sword",
   "icon": "holmium:Ceasium sword",
   "category": "holmium:weapons",
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "The ceasium sword can be crafted like a normal sword but with ceasium ingots and there may or may not be some side effects"
+      "text": "The cesium sword can be crafted like a normal sword but with cesium ingots and there may or may not be some side effects"
     }
   ]
 }
