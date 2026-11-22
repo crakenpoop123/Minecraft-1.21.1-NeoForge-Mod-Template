@@ -1,0 +1,11 @@
+{
+  "name": "Uranium armour",
+  "icon": "holmium:uranium_helmet",
+  "category": "holmium:armour",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The new uranium armour set can be crafted with uranium ingots and when wearing the full set, it lets you fly! (with little to no downsides)"
+    }
+  ]
+}
