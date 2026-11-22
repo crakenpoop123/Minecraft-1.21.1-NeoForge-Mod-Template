@@ -20,10 +20,7 @@ public class ModGlobalLootModifierProvider extends GlobalLootModifierProvider {
 
     @Override
     protected void start() {
-        this.add("village_pirate_token",
-                new AddItemModifier(new LootItemCondition[] {
-                        new LootTableIdCondition.Builder(ResourceLocation.withDefaultNamespace("chests/desert_pyramid")).build(), LootItemRandomChanceCondition.randomChance(0.001f).build()
-                }, ModItems.URANIUM_BAR.get()));
+
 
     }
 }
