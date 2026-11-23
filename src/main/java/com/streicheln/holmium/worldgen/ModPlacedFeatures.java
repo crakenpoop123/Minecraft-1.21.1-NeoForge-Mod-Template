@@ -32,7 +32,7 @@ public class ModPlacedFeatures {
                 ModOrePlacement.commonOrePlacement(256, HeightRangePlacement.uniform(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(80)))); //15:05 ore placement
 
         register(context, CESIUM_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.OVERWORLD_CESIUM_ORE_KEY),
-                ModOrePlacement.rareOrePlacement(1, HeightRangePlacement.uniform(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(-32)))); //15:05 ore placement
+                ModOrePlacement.commonOrePlacement(12, HeightRangePlacement.uniform(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(-48)))); //15:05 ore placement
 
         register(context, HOLMIUM_TREE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.HOLMIUM_TREE_KEY),
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(3, 0.1f, 2),

@@ -1,0 +1,11 @@
+{
+  "name": "How do I leave?",
+  "icon": "holmium:holmium_portal",
+  "category": "holmium:dimension_category",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Die... or craft a portal with nine uranium ingots"
+    }
+  ]
+}

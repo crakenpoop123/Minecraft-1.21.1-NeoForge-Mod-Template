@@ -29,31 +29,46 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 //                ModItems.ITEM_NAME
 //                );
 //
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.HOLMIUM_STONE.get()) // SHAPED RECIPE TEMPLATE
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.URANIUM_CHESTPLATE.get()) // SHAPED RECIPE TEMPLATE
                 .pattern("U U")
                 .pattern("UUU")
                 .pattern("UUU")
                 .define('U', ModItems.URANIUM_BAR)
                 .unlockedBy("has_item", has(ModItems.URANIUM_BAR)).save(recipeOutput, "holmium:uranium_chest");
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.HOLMIUM_STONE.get()) // SHAPED RECIPE TEMPLATE
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.URANIUM_HELMET.get()) // SHAPED RECIPE TEMPLATE
                 .pattern("UUU")
                 .pattern("U U")
                 .define('U', ModItems.URANIUM_BAR)
                 .unlockedBy("has_item", has(ModItems.URANIUM_BAR)).save(recipeOutput, "holmium:uranium_helm");
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.HOLMIUM_STONE.get()) // SHAPED RECIPE TEMPLATE
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.URANIUM_LEGGINGS.get()) // SHAPED RECIPE TEMPLATE
                 .pattern("UUU")
                 .pattern("U U")
                 .pattern("U U")
                 .define('U', ModItems.URANIUM_BAR)
                 .unlockedBy("has_item", has(ModItems.URANIUM_BAR)).save(recipeOutput, "holmium:uranium_leg");
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.HOLMIUM_STONE.get()) // SHAPED RECIPE TEMPLATE
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.URANIUM_BOOTS.get()) // SHAPED RECIPE TEMPLATE
                 .pattern("U U")
                 .pattern("U U")
                 .define('U', ModItems.URANIUM_BAR)
                 .unlockedBy("has_item", has(ModItems.URANIUM_BAR)).save(recipeOutput, "holmium:uranium_boot");
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.CESIUM_SWORD.get()) // SHAPED RECIPE TEMPLATE
+                .pattern(" C ")
+                .pattern(" C ")
+                .pattern(" s ")
+                .define('C', ModItems.CESIUM_INGOT)
+                .define('s', Items.STICK)
+                .unlockedBy("has_item", has(ModItems.URANIUM_BAR)).save(recipeOutput, "holmium:cesium_sword_why_is_this_broken");
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.HOLMIUM_PORTAL.get()) // SHAPED RECIPE TEMPLATE
+                .pattern("UUU")
+                .pattern("UUU")
+                .pattern("UUU")
+                .define('U', ModItems.URANIUM_BAR)
+                .unlockedBy("has_item", has(ModItems.URANIUM_BAR)).save(recipeOutput, "holmium:portal");
 
 
 //

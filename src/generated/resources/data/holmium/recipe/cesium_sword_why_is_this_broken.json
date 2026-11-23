@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "holmium:cesium_ingot"
+    },
+    "s": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    " C ",
+    " C ",
+    " s "
+  ],
+  "result": {
+    "count": 1,
+    "id": "holmium:cesium_sword"
+  }
+}

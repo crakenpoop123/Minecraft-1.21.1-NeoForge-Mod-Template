@@ -39,7 +39,9 @@ public class ModConfiguredFeatures {
         RuleTest holmiumStoneReplaceables = new TagMatchTest(ModTags.Blocks.HOLMIUM_STONE_REPLACEABLES); // Replace certain tags
         RuleTest netherrackReplaceables = new BlockMatchTest(Blocks.NETHERRACK); // Replace individual blocks
         RuleTest endReplaceables = new BlockMatchTest(Blocks.END_STONE);
-        RuleTest StoneReplaceables = new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES);
+        RuleTest stoneReplaceables = new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES);
+        RuleTest deepslateReplaceables = new TagMatchTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES);
+
 
         List<OreConfiguration.TargetBlockState>  overworldUraniumOre = List.of(
                 OreConfiguration.target(holmiumStoneReplaceables, ModBlocks.URANIUM_ORE.get().defaultBlockState()));
@@ -47,9 +49,9 @@ public class ModConfiguredFeatures {
         register(context, OVERWORLD_URANIUM_ORE_KEY, Feature.ORE, new OreConfiguration(overworldUraniumOre, 9)); // Ctrl left click ore to see it all
 
         List<OreConfiguration.TargetBlockState>  overworldCesiumOre = List.of(
-                OreConfiguration.target(holmiumStoneReplaceables, ModBlocks.CESIUM_ORE.get().defaultBlockState()));
+                OreConfiguration.target(deepslateReplaceables, ModBlocks.CESIUM_ORE.get().defaultBlockState()));
 
-        register(context, OVERWORLD_CESIUM_ORE_KEY, Feature.ORE, new OreConfiguration(overworldCesiumOre, 1)); // Ctrl left click ore to see it all
+        register(context, OVERWORLD_CESIUM_ORE_KEY, Feature.ORE, new OreConfiguration(overworldCesiumOre, 2)); // Ctrl left click ore to see it all
 
 
 
